@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DOCUMENT>
+	<DESC/>
+	<TIME>2600</TIME>
+	<P ID="P0">
+		<S ID="S0"/>
+		<S ID="S1">
+			<W DEP="none" FUNC="NH" ID="W0" LEMMA="Canada" POS="N">CANADA</W>
+			<PUNCT>:</PUNCT>
+			<W DEP="none" FUNC="NH" ID="W2" LEMMA="Japan" POS="N">Japan</W>
+			<PUNCT>,</PUNCT>
+			<W DEP="W5" FUNC="SUBJ" ID="W4" LEMMA="Peru" POS="N">Peru</W>
+			<W DEP="W0" FUNC="+FMAINV" ID="W5" LEMMA="take" POS="V">take</W>
+			<W DEP="W7" FUNC="A" ID="W6" LEMMA="tough" POS="A">tough</W>
+			<W DEP="W5" FUNC="OBJ" ID="W7" LEMMA="stand" POS="N">stand</W>
+			<W DEP="W5" FUNC="ADVL" ID="W8" LEMMA="on" POS="PREP">on</W>
+			<W DEP="W10" FUNC="A" ID="W9" LEMMA="guerrilla" POS="N">guerrilla</W>
+			<W DEP="W8" FUNC="P" ID="W10" LEMMA="demand" POS="N">demands</W>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="1">
+		<S ID="S2">
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="political" ID="0">
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="1">
+					<W DEP="none" FUNC="VOC" ID="W30" LEMMA="Japan" POS="N">Japan</W>
+				</MARKABLE>
+				<PUNCT>,</PUNCT>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="2">
+					<W DEP="W33" FUNC="SUBJ" ID="W32" LEMMA="Peru" POS="N">Peru</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W33" LEMMA="take" POS="V">take</W>
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="3">
+				<W DEP="W35" FUNC="A" ID="W34" LEMMA="tough" POS="A">tough</W>
+				<W DEP="W33" FUNC="OBJ" ID="W35" LEMMA="stand" POS="N">stand</W>
+				<W DEP="W33" FUNC="ADVL" ID="W36" LEMMA="on" POS="PREP">on</W>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="4">
+					<W DEP="W38" FUNC="A" ID="W37" LEMMA="guerrilla" POS="N">guerrilla</W>
+					<W DEP="W36" FUNC="P" ID="W38" LEMMA="demand" POS="N">demands</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+		<S ID="S3">
+			<W DEP="W57" FUNC="A" ID="W56" LEMMA="walker" POS="N">Walker</W>
+			<W DEP="none" FUNC="NH" ID="W57" LEMMA="Simon" POS="N">Simon</W>
+		</S>
+	</P>
+	<P ID="2">
+		<S ID="S4">
+			<W DEP="W63" FUNC="A" ID="W62" LEMMA="Toronto" POS="N">TORONTO</W>
+			<W DEP="none" FUNC="NH" ID="W63" LEMMA="1997-02-01" POS="NUM">1997-02-01</W>
+		</S>
+	</P>
+	<P ID="3">
+		<S ID="S5">
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="5">
+				<COREF CERTAIN="TRUE" COMMENT="political" ID="219" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="6">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="220" SRC="1" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W70" FUNC="SUBJ" ID="W68" LEMMA="Japan" POS="N">Japan</W>
+				</MARKABLE>
+				<W DEP="W70" FUNC="CC" ID="W69" LEMMA="and" POS="CC">and</W>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="8">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="221" SRC="2" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W73" FUNC="SUBJ" ID="W70" LEMMA="Peru" POS="N">Peru</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W70" FUNC="NOM" ID="W71" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="9">
+				<W DEP="W71" FUNC="P" ID="W72" LEMMA="Saturday" POS="N">Saturday</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W73" LEMMA="take" POS="V">took</W>
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="10">
+				<COREF CERTAIN="TRUE" COMMENT="indefinite but referring to headline" ID="222" SRC="3" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W76" FUNC="DN" ID="W74" LEMMA="a" POS="DET">a</W>
+				<W DEP="W76" FUNC="A" ID="W75" LEMMA="tough" POS="A">tough</W>
+				<W DEP="W73" FUNC="OBJ" ID="W76" LEMMA="stand" POS="N">stand</W>
+				<W DEP="W73" FUNC="ADVL" ID="W77" LEMMA="on" POS="PREP">on</W>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="11">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="223" SRC="4" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W79" FUNC="A" ID="W78" LEMMA="rebel" POS="N">rebel</W>
+					<W DEP="W77" FUNC="P" ID="W79" LEMMA="demand" POS="N">demands</W>
+					<W DEP="W79" FUNC="NOM" ID="W80" LEMMA="in" POS="PREP">in</W>
+					<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="12">
+						<W DEP="W84" FUNC="DN" ID="W81" LEMMA="the" POS="DET">the</W>
+						<W DEP="W83" FUNC="A" ID="W82" LEMMA="Lima" POS="N">Lima</W>
+						<W DEP="W84" FUNC="A" ID="W83" LEMMA="hostage" POS="N">hostage</W>
+						<W DEP="W80" FUNC="P" ID="W84" LEMMA="crisis" POS="N">crisis</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="W73" FUNC="CC" ID="W86" LEMMA="but" POS="CC">but</W>
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="13">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="226" SRC="10" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="224">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="225" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W88" FUNC="A" ID="W87" LEMMA="they" POS="PRON">their</W>
+				</MARKABLE>
+				<W DEP="W89" FUNC="SUBJ" ID="W88" LEMMA="accord" POS="N">accord</W>
+			</MARKABLE>
+			<W DEP="W91" FUNC="+FAUXV" ID="W89" LEMMA="be" POS="V">was</W>
+			<W DEP="W91" FUNC="ADVL" ID="W90" LEMMA="swift" POS="ADV">swiftly</W>
+			<W DEP="W73" FUNC="-FMAINV" ID="W91" LEMMA="reject" POS="EN">rejected</W>
+			<W DEP="W91" FUNC="ADVL" ID="W92" LEMMA="by" POS="PREP">by</W>
+			<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="14">
+				<W DEP="W95" FUNC="DN" ID="W93" LEMMA="the" POS="DET">the</W>
+				<W DEP="W95" FUNC="A" ID="W94" LEMMA="guerrilla" POS="N">guerrillas</W>
+				<W DEP="W92" FUNC="P" ID="W95" LEMMA="hold" POS="N">holding</W>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="15">
+					<W DEP="W97" FUNC="QN" ID="W96" LEMMA="72" POS="NUM">72</W>
+					<W DEP="none" FUNC="SUBJ" ID="W97" LEMMA="captive" POS="N">captives</W>
+				</MARKABLE>
+				<W DEP="W97" FUNC="NOM" ID="W98" LEMMA="in" POS="PREP">in</W>
+				<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="16">
+					<MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="17">
+						<W DEP="W102" FUNC="DN" ID="W99" LEMMA="the" POS="DET">the</W>
+						<W DEP="W101" FUNC="A" ID="W100" LEMMA="Japanese" POS="A">Japanese</W>
+						<W DEP="W102" FUNC="A" ID="W101" LEMMA="ambassador" POS="N">ambassador's</W>
+					</MARKABLE>
+					<W DEP="W98" FUNC="P" ID="W102" LEMMA="residence" POS="N">residence</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+</DOCUMENT>
