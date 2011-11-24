@@ -1,5 +1,6 @@
 import xml.dom.minidom
 import xml.dom
+from operator import itemgetter
 
 from decimal import *
 
@@ -10,10 +11,8 @@ clusters = {}
 coreferences = []
 
 
-# TOY coref
-coreferences = [["9","4"]]
-
-
+# TOY coreferences
+coreferences = [["9","4"],["10","1"]]
 
 
 getcontext().prec = 7
@@ -27,9 +26,8 @@ xmldoc = xml.dom.minidom.parse('data/coreference_enriched.xml')
 
 def main():
 
-    fillOutputXML()
-    exit()
-
+    # fillOutputXML()
+    
     initAndMarkAll()
     
     """
@@ -73,68 +71,61 @@ def scanMarkables():
     
     # possible referent
     for np_i in inv_markables:
-        print '\n'
-        # possible antecedents
+        print 'changing np_i:', np_i
+        
+        # adding here all the possible antecedents to np_i and their distance,
+        # in order to collect the compatible one with minimum distance to np_i
+        possible_ants = []
+        
+        # possible antecedents (except referent itself)
         for np_j in inv_markables[inv_markables.index(np_i)+1:]:
-            print '\n'
             dis = distance(markables_dict[np_i], markables_dict[np_j])
             print 'distance(id',markables_dict[np_i]["id"],', id',markables_dict[np_j]["id"],') = ',dis
+            
+            
+            
             # if distance between two considered markables is minor than threshold (r)
             if dis < threshold:
-                print 'found distance under threshold'
+                print 'found distance under threshold\n'
                 # CHECK COMPATIBILITY
                 if allNpsCompatible(clusters[np_i],clusters[np_j]) == True:
                     
-                    print 'found compatibility amongst clusters, unifying clusters...'
-                    # if yes, upgrade clusters dictionary with a union of them for both np_i and np_j
-                    # i.e. UNION(clusters(np_i), clusters(np_j))
-                    clusters[np_i] = clusters[np_i].union(clusters[np_j])
-                    clusters[np_j] = clusters[np_i]
-                    print 'clusters np_i (unified):'
-                    print clusters[np_i]
-                    print 'clusters np_j (unified):'
-                    print clusters[np_j]
-
-                    # saving our coref in order to provide COREF_USL children
-                    # the coreferences list is in the form:
-                    # [[referent_markable_id, antecedent_markable_id (aka src)], ... ]
-                    coreferences.append([markables_dict[np_i]["id"],markables_dict[np_j]["id"]])
-
-
-def fillOutputXML():
-    output_xml_parsed = xml.dom.minidom.parse('data/coreference_enriched.xml') 
-    markable_dad = ''
+                    print 'found compatibility amongst 2 clusters, adding them in a list (later will compute best minimum)...'
+                    
+                    # list of possible antecedents of np_i with their distances
+                    # antecedent, dis
+                    possible_ants.append((np_j, dis))
+                    print '*** unordered possible ants', possible_ants
+                
+                else: print 'they\'re not compatible, stepping to the next one'
+        
+        # if at least one possible antecedents seems to exist
+        if (possible_ants != []):   
+            print '*** SEARCHING FOR MINIMUM:'
+            # selecting the minimum distance from possible_ants of np_i
+            possible_ants = sorted(possible_ants,key=itemgetter(1),reverse=False)
+            print '*** ordered possible ants', possible_ants
+            
+            # when found the minimum:
+            print '*** minimum d for np_i: ',possible_ants[0][0], possible_ants[0][1]
+            
+            min_d_compatible_np_j = possible_ants[0][0]
+            
+            # upgrade clusters dictionary with a union of them for both np_i and min_d_compatible_np_j
+            # i.e. UNION(clusters(np_i), clusters(min_d_compatible_np_j))
+            clusters[np_i] = clusters[np_i].union(clusters[min_d_compatible_np_j])
+            clusters[min_d_compatible_np_j] = clusters[np_i]
+            print 'clusters np_i (unified):'
+            print clusters[np_i]
+            print 'clusters min_d_np_j (unified):'
+            print clusters[min_d_compatible_np_j]
     
-    f = open ("/home/jacopo/Desktop/prova.xml","w+")
-    
-    for c in coreferences:
+            # saving our coref in order to provide COREF_USL children
+            # the coreferences list is in the form:
+            # [[referent_markable_id, antecedent_markable_id (aka src)], ... ]
+            coreferences.append([markables_dict[np_i]["id"],markables_dict[min_d_compatible_np_j]["id"]])
 
-        # searching for markable to which will be added a COREF child
-        for m in output_xml_parsed.getElementsByTagName("MARKABLE"):
-            if m.getAttribute("ID") == c[0]:
-                markable_dad = m
-        
-        coref_el = xml.dom.minidom.Element("COREF_US")
-        
-        src_attr = xml.dom.minidom.Attr("SRC")
-        src_attr.value = c[1]
-        coref_el.setAttributeNode(src_attr)
-        
-        comment_attr = xml.dom.minidom.Attr("COMMENT")
-        comment_attr.value = "This coreference has been generated by an Unsupervised ML Algo"
-        coref_el.setAttributeNode(comment_attr)
-        
-        id_attr = xml.dom.minidom.Attr("ID")
-        id_attr.value = "US"+str(coreferences.index(c))
-        coref_el.setAttributeNode(id_attr)
-        
-        print 'coref',coref_el
-        print 'dad',markable_dad
-        
-        markable_dad.insertBefore(coref_el,markable_dad.firstChild)
-        
-    f.write( output_xml_parsed.toprettyxml() )
-    f.close
+
 
     
     
@@ -196,6 +187,13 @@ def allNpsCompatible (cluster_i, cluster_j):
     return True
 
 
+
+
+
+#######################
+# Distance computing
+#######################
+
 # given two markables dictionaries, return distance between them
 # output distance expressed in Decimal object
 def distance(m_x,m_y):
@@ -205,13 +203,20 @@ def distance(m_x,m_y):
     
     infinity = 1000
     
+    # right things for weights below
+    """
+    'subsuming'         : Decimal(-infinity) ,                    
+    'number'            : Decimal(infinity) ,
+    'animacy'           : Decimal(infinity) }
+    """
     weights =   { 
                     'words_match'       : Decimal(10) ,
                     'head_match'        : Decimal(1) ,
                     'position'          : Decimal(5) ,
-                    'subsuming'         : Decimal(-infinity) ,                    
-                    'number'            : Decimal(infinity) ,
-                    'animacy'           : Decimal(infinity) }
+                    'subsuming'         : Decimal(1) ,                    
+                    'number'            : Decimal(1) ,
+                    'animacy'           : Decimal(1) }
+                    
     
     print 'starting distance:',d
     d = d + weights['words_match'] * lemmasMatch(m_x, m_y)
@@ -383,6 +388,50 @@ def wordsFromMarkable(m):
         words.append(w.firstChild.nodeValue)
     return words
     
+    
+    
+# write a new version of xml enriched with new coreferences
+# in the form of:
+# <COREF_US COMMENT="This coreference has been generated by an Unsupervised ML Algo" ID="US0" SRC="4"/>
+def fillOutputXML():
+    output_xml_parsed = xml.dom.minidom.parse('data/coreference_enriched.xml') 
+    markable_dad = ''
+    
+    f = open ("/home/jacopo/Desktop/us_coref.xml","w+")
+    
+    for c in coreferences:
+
+        # searching for markable to which will be added a COREF child
+        for m in output_xml_parsed.getElementsByTagName("MARKABLE"):
+            if m.getAttribute("ID") == c[0]:
+                markable_dad = m
+        
+        # coref_us Element
+        coref_el = xml.dom.minidom.Element("COREF_US")
+        
+        src_attr = xml.dom.minidom.Attr("SRC")
+        src_attr.value = c[1]
+        coref_el.setAttributeNode(src_attr)
+        
+        comment_attr = xml.dom.minidom.Attr("COMMENT")
+        comment_attr.value = "This coreference has been generated by an Unsupervised ML Algo"
+        coref_el.setAttributeNode(comment_attr)
+        
+        id_attr = xml.dom.minidom.Attr("ID")
+        id_attr.value = "US"+str(coreferences.index(c))
+        coref_el.setAttributeNode(id_attr)
+        
+        type_attr = xml.dom.minidom.Attr("TYPE_REL")
+        type_attr.value = "IDENTITY"
+        coref_el.setAttributeNode(type_attr)
+        
+        #print 'coref',coref_el
+        #print 'dad',markable_dad
+        
+        markable_dad.insertBefore(coref_el,markable_dad.firstChild)
+        
+    f.write( output_xml_parsed.toprettyxml() )
+    f.close
 
 # this is the main part of the program
 if __name__ == "__main__":
