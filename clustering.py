@@ -1,6 +1,7 @@
 import xml.dom.minidom
 import xml.dom
 from operator import itemgetter
+import tuning
 
 from decimal import *
 
@@ -21,10 +22,10 @@ threshold = 9999
 
 
 
-xmldoc = xml.dom.minidom.parse('data/coreference_enriched.xml') 
+xmldoc = xml.dom.minidom.parse('data/oscar.xml') 
+
 
 def main():
-
     
     initAndMarkAll()
     
@@ -35,6 +36,14 @@ def main():
     
     for m in markables:
         markables_dict[m] =  buildVectorFromMarkable(m)
+    
+    # clean empty markables
+    for m_dict in markables_dict.keys():
+        if markables_dict[m_dict] == {}: 
+            #print 'ooooooooooo'
+            markables_dict.pop(m_dict)
+            markables.remove(m_dict)
+    
     
     print 'Markables dictionary: ',markables_dict
     
@@ -71,7 +80,7 @@ def scanMarkables():
     print inv_markables
     
     # possible referent
-    for np_i in inv_markables[5:6]:
+    for np_i in inv_markables:
         print '\nconsidering np_i:', markables_dict[np_i]["id"]
         
         # adding here all the possible antecedents to np_i and their distance,
@@ -121,17 +130,15 @@ def scanMarkables():
     
             # saving our coref in order to provide COREF_USL children
             # the coreferences list is in the form:
-            # [[referent_markable_id, antecedent_markable_id (aka src)], ... ]
-            coreferences.append([markables_dict[np_i]["id"],markables_dict[min_d_compatible_np_j]["id"]])
+            # [[referent_markable_id, antecedent_markable_id (aka src)], distance... ]
+            coreferences.append([markables_dict[np_i]["id"],markables_dict[min_d_compatible_np_j]["id"],possible_ants[0][1]])
 
 
-
-    
     
 # build a dictionary associated to a markable
 # storing all the useful information parsed from XML file
 # an example of toy markable:
-# <MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEM_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="10">
+# <MARKABLE HEAD="W94" NUMBER="P" ARTICLE="D" SEMANTIC_CLASS="FRUIT" PROPER_NAME="TRUE" ANIMACY="TRUE" COMMENT="" ID="10">
 def buildVectorFromMarkable(m):
     
     np_i_dict = {}
@@ -139,7 +146,13 @@ def buildVectorFromMarkable(m):
     np_i_dict["id"] = m.getAttribute("ID")
     
     np_i_dict["head_id"] = m.getAttribute("HEAD")
+    # if unuseful markable, return void dict (line #774)
+    if np_i_dict["head_id"] == '':
+        return {}
     np_i_dict["head_word"] = wordFromId(np_i_dict["head_id"])
+    
+
+    
     np_i_dict["head_lemma"] = lemmaFromId(np_i_dict["head_id"])
     
     np_i_dict["words"] = wordsFromMarkable(m)
@@ -151,7 +164,7 @@ def buildVectorFromMarkable(m):
     
     np_i_dict["article"] = m.getAttribute("ARTICLE")
     
-    np_i_dict["sem_class"] = m.getAttribute("SEM_CLASS")
+    np_i_dict["sem_class"] = m.getAttribute("SEMANTIC_CLASS")
     
     np_i_dict["proper_name"] = m.getAttribute("PROPER_NAME")
     
@@ -187,8 +200,6 @@ def allNpsCompatible (cluster_i, cluster_j):
 
 
 
-
-
 #######################
 # Distance computing
 #######################
@@ -204,31 +215,29 @@ def distance(m_x,m_y):
     infinity = 9999999
     
     # right things for weights below
-    """
-    'subsuming'         : Decimal(-infinity) ,                    
-    'number'            : Decimal(infinity) ,
-    'animacy'           : Decimal(infinity) }
-    """
     weights =   { 
                     'words_match'       : Decimal(10) ,
                     'head_match'        : Decimal(1) ,
                     'position'          : Decimal(5) ,
-                    'subsuming'         : Decimal(1) ,                    
-                    'number'            : Decimal(1) ,
-                    'animacy'           : Decimal(1) }
+                    'sem_class'         : Decimal(infinity) ,
+                    'subsuming'         : Decimal(-infinity) ,                    
+                    'number'            : Decimal(infinity) ,
+                    'animacy'           : Decimal(infinity) }
                     
     
-    #print 'starting distance:',d
+    print 'starting distance:',d
     d = d + weights['words_match'] * lemmasMatch(m_x, m_y)
-    #print 'after wordmatch:',d
+    print 'after wordmatch:',d
     d = d + weights['head_match'] * headMatch(m_x, m_y)
-    #print 'after position:',d
+    print 'after position:',d
     d = d + weights['position'] * posDistance(m_x, m_y)
-    #print 'after subsuming:',d
+    print 'after subsuming:',d
     d = d + weights['subsuming'] * npSubsuming(m_x, m_y)
-    #print 'after number:',d
+    print 'after number:',d
     d = d + weights['number'] * numberMatch(m_x, m_y)
-    #print 'after animacy:',d
+    print 'after sem_class:',d
+    d = d + weights['sem_class'] * semClassMatch(m_x, m_y)
+    print 'after animacy:',d
     d = d + weights['animacy'] * animacyMatch(m_x, m_y)
     
     
@@ -238,15 +247,15 @@ def distance(m_x,m_y):
 # returns 0 if numbers (or animacies) are different, 1 otherwise
 def numberMatch(m_x, m_y):
     if m_x["number"] != m_y["number"]:
-        return 0
+        return Decimal(0)
     else: 
-        return 1
+        return Decimal(1)
 
 def animacyMatch(m_x, m_y):
     if m_x["animacy"] != m_y["animacy"]:
-        return 0
+        return Decimal(0)
     else: 
-        return 1
+        return Decimal(1)
 
 
 
@@ -254,19 +263,19 @@ def animacyMatch(m_x, m_y):
 # head words subsuming
 def wordSubString(m_x, m_y):
     if m_x["head_word"] in m_y["head_word"] or m_y["head_word"] in m_x["head_word"]:
-        return 1
+        return Decimal(1)
     else: 
-        return 0
+        return Decimal(0)
     
 # NPs subsuming
 # TO-DO: Let's think to a better way to get subsuming (e.g., intersection?)
 def npSubsuming(m_x, m_y):
     
     if set(m_x["words"]) <= set(m_y["words"]) or set(m_x["words"]) >= set(m_y["words"]):
-        return 1
+        return Decimal(1)
     
     else: 
-        return 0
+        return Decimal(0)
         
 # input = two markables dictionaries
 # returns diff positions / max_distance (last word_id)
@@ -295,6 +304,37 @@ def headMatch(m_x,m_y):
     else:
         return Decimal(0)
 
+# input = two markables dictionaries
+# returns 1 if they have a common semantics class, 0 otherwise
+def semClassMatch(m_x,m_y):
+    
+    sem_class_x = listFromSemClassStr(m_x["sem_class"])
+    sem_class_y = listFromSemClassStr(m_y["sem_class"])
+    
+    for s_c in sem_class_x:
+        if s_c in sem_class_y:
+            return 1
+        
+    for s_c in sem_class_y:
+        if s_c in sem_class_x:
+            return 1
+    
+    # else, intersection is empty
+    return 0
+
+def listFromSemClassStr(s):
+    # string ['relation', 'substance', 'artifact', 'food'] --> list 
+    s = s[1:len(s)-1]
+    
+    s = s.replace(" ","")
+    
+    l = s.split(",")
+    
+    for s in l:
+        l[l.index(s)] = s[1:len(s)-1]
+    return l
+    
+    
 # input = two markables dictionaries
 # returns len(different_lemmas) / len(longest_markable)
 def lemmasMatch(m_x,m_y):
@@ -388,13 +428,14 @@ def wordsFromMarkable(m):
         words.append(w.firstChild.nodeValue)
     return words
     
-    
+
     
 # method to write a brand new xml file, enriched with new coreferences
 # new coreferences will be in the form of:
 # <COREF_US COMMENT="This coreference has been generated by an Unsupervised ML Algo" ID="US0" SRC="4"/>
 def fillOutputXML():
-    output_xml_parsed = xml.dom.minidom.parse('data/coreference_enriched.xml') 
+    # output_xml_parsed = xml.dom.minidom.parse('data/coreference_enriched.xml') 
+    output_xml_parsed = xml.dom.minidom.parse('data/oscar.xml') 
     markable_dad = ''
     
     f = open ("/home/jacopo/Desktop/us_coref.xml","w+")
@@ -406,7 +447,7 @@ def fillOutputXML():
             if m.getAttribute("ID") == c[0]:
                 markable_dad = m
         
-        # coref_us Element
+        # COREF_US Element
         coref_el = xml.dom.minidom.Element("COREF_US")
         
         src_attr = xml.dom.minidom.Attr("SRC")
@@ -425,14 +466,17 @@ def fillOutputXML():
         type_attr.value = "IDENTITY"
         coref_el.setAttributeNode(type_attr)
         
-        #print 'coref',coref_el
-        #print 'dad',markable_dad
+        d_attr = xml.dom.minidom.Attr("DISTANCE")
+        d_attr.value = str(c[2])
+        print '...........',c
+        coref_el.setAttributeNode(d_attr)
         
         markable_dad.insertBefore(coref_el,markable_dad.firstChild)
         
     f.write( output_xml_parsed.toprettyxml() )
     f.close
 
+    
 # this is the main part of the program
 if __name__ == "__main__":
     main()

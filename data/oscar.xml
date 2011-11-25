@@ -1,0 +1,1396 @@
+<?xml version="1.0"?>
+<DOCUMENT>
+	<DESC>i differentiated between rebels and MRTA because they are not exactly the same thing although they are often discussed as if they are.</DESC>
+	<TIME>3023</TIME>
+	<P ID="P0">
+		<S ID="S0"/>
+		<S ID="S1">
+			<W DEP="none" FUNC="NH" ID="W0" LEMMA="Peru" POS="N">PERU</W>
+			<PUNCT>:</PUNCT>
+			<W DEP="W3" FUNC="A" ID="W2" LEMMA="Peru" POS="N">Peru</W>
+			<W DEP="W4" FUNC="SUBJ" ID="W3" LEMMA="mediator" POS="N">mediators</W>
+			<W DEP="W5" FUNC="+FAUXV" ID="W4" LEMMA="will" POS="V">will</W>
+			<W DEP="W0" FUNC="-FMAINV" ID="W5" LEMMA="seek" POS="V">seek</W>
+			<W DEP="W7" FUNC="INFMARK" ID="W6" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W5" FUNC="-FMAINV" ID="W7" LEMMA="spur" POS="V">spur</W>
+			<W DEP="W9" FUNC="A" ID="W8" LEMMA="hostage" POS="N">hostage</W>
+			<W DEP="W7" FUNC="OBJ" ID="W9" LEMMA="talk" POS="N">talks</W>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="1">
+		<S ID="S2">
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W30" ID="0" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<W DEP="W30" FUNC="A" ID="W29" LEMMA="Peru" POS="N">Peru</W>
+				<W DEP="W31" FUNC="SUBJ" ID="W30" LEMMA="mediator" POS="N">mediators</W>
+			</MARKABLE>
+			<W DEP="W32" FUNC="+FAUXV" ID="W31" LEMMA="will" POS="V">will</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W32" LEMMA="seek" POS="V">seek</W>
+			<W DEP="W34" FUNC="INFMARK" ID="W33" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W32" FUNC="-FMAINV" ID="W34" LEMMA="spur" POS="V">spur</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W36" ID="1" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<W DEP="W36" FUNC="A" ID="W35" LEMMA="hostage" POS="N">hostage</W>
+				<W DEP="W34" FUNC="OBJ" ID="W36" LEMMA="talk" POS="N">talks</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+		<S ID="S3">
+			<W DEP="W55" FUNC="A" ID="W54" LEMMA="James" POS="N">James</W>
+			<W DEP="none" FUNC="NH" ID="W55" LEMMA="Craig" POS="N">Craig</W>
+		</S>
+	</P>
+	<P ID="2">
+		<S ID="S4">
+			<W DEP="W61" FUNC="A" ID="W60" LEMMA="Lima" POS="N">LIMA</W>
+			<W DEP="none" FUNC="NH" ID="W61" LEMMA="1997-02-16" POS="NUM">1997-02-16</W>
+		</S>
+	</P>
+	<P ID="3">
+		<S ID="S5">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W67" ID="2" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'measure', 'location', 'action', 'event', 'cognition']">
+				<W DEP="W67" FUNC="QN" ID="W66" LEMMA="three" POS="NUM">Three</W>
+				<W DEP="W80" FUNC="SUBJ" ID="W67" LEMMA="round" POS="N">rounds</W>
+				<W DEP="W67" FUNC="NOM-OF" ID="W68" LEMMA="of" POS="PREP">of</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W69" ID="235" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="236" SRC="1" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W68" FUNC="P" ID="W69" LEMMA="talk" POS="N">talks</W>
+					<W DEP="W69" FUNC="NOM" ID="W70" LEMMA="between" POS="PREP">between</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W72" ID="3" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'action', 'event', 'cognition']">
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W72" ID="4" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'action', 'event', 'cognition']">
+							<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W71" ID="6" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+								<W DEP="W72" FUNC="A" ID="W71" LEMMA="Peru" POS="N">Peru's</W>
+							</MARKABLE>
+							<W DEP="W70" FUNC="P" ID="W72" LEMMA="government" POS="N">government</W>
+						</MARKABLE>
+						<W DEP="W72" FUNC="CC" ID="W73" LEMMA="and" POS="CC">and</W>
+						<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W75" ID="5" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+							<W DEP="W75" FUNC="A" ID="W74" LEMMA="leftist" POS="N">leftist</W>
+							<W DEP="W72" FUNC="P" ID="W75" LEMMA="rebel" POS="N">rebels</W>
+							<W DEP="W75" FUNC="-FMAINV" ID="W76" LEMMA="hold" POS="ING">holding</W>
+							<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W78" ID="8" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'person', 'animal', 'artifact']">
+								<W DEP="W78" FUNC="QN" ID="W77" LEMMA="72" POS="NUM">72</W>
+								<W DEP="W79" FUNC="A" ID="W78" LEMMA="man" POS="N">men</W>
+							</MARKABLE>
+							<W DEP="W76" FUNC="OBJ" ID="W79" LEMMA="captive" POS="A">captive</W>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W81" FUNC="+FAUXV" ID="W80" LEMMA="have" POS="V">have</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W81" LEMMA="make" POS="EN">made</W>
+			<W DEP="W83" FUNC="DN" ID="W82" LEMMA="little" POS="DET">little</W>
+			<W DEP="W81" FUNC="OBJ" ID="W83" LEMMA="progress" POS="N">progress</W>
+			<W DEP="W81" FUNC="CC" ID="W84" LEMMA="and" POS="CC">and</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W85" ID="9" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="232" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W86" FUNC="SUBJ" ID="W85" LEMMA="mediator" POS="N">mediators</W>
+			</MARKABLE>
+			<W DEP="W87" FUNC="+FAUXV" ID="W86" LEMMA="be" POS="V">were</W>
+			<W DEP="W81" FUNC="-FMAINV" ID="W87" LEMMA="try" POS="ING">trying</W>
+			<W DEP="W89" FUNC="INFMARK" ID="W88" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W87" FUNC="-FMAINV" ID="W89" LEMMA="keep" POS="V">keep</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W91" ID="10" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="233" SRC="1" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W91" FUNC="DN" ID="W90" LEMMA="the" POS="DET">the</W>
+				<W DEP="W89" FUNC="OBJ" ID="W91" LEMMA="discussion" POS="N">discussions</W>
+			</MARKABLE>
+			<W DEP="W89" FUNC="PCOMPL-O" ID="W92" LEMMA="alive" POS="A">alive</W>
+			<W DEP="W96" FUNC="CS" ID="W93" LEMMA="as" POS="CS">as</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W95" ID="11" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+				<W DEP="W95" FUNC="DN" ID="W94" LEMMA="the" POS="DET">the</W>
+				<W DEP="W96" FUNC="SUBJ" ID="W95" LEMMA="siege" POS="N">siege</W>
+			</MARKABLE>
+			<W DEP="W89" FUNC="+FMAINV" ID="W96" LEMMA="enter" POS="V">entered</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W99" ID="12" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['measure', 'time', 'state']">
+				<MARKABLE COMMENT="" ID="13">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="237" SRC="11" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W98" FUNC="A" ID="W97" LEMMA="it" POS="PRON">its</W>
+				</MARKABLE>
+				<W DEP="W99" FUNC="A" ID="W98" LEMMA="61st" POS="NUM">61st</W>
+				<W DEP="W96" FUNC="ADVL" ID="W99" LEMMA="day" POS="N">day</W>
+				<W DEP="W99" FUNC="ADVL" ID="W100" LEMMA="on" POS="PREP">on</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W101" ID="14" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W100" FUNC="P" ID="W101" LEMMA="Sunday" POS="N">Sunday</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="4">
+		<S ID="S6">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W178" ID="15" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<W DEP="W176" FUNC="A" ID="W175" LEMMA="Canadian" POS="A">Canadian</W>
+				<W DEP="W177" FUNC="A" ID="W176" LEMMA="ambassador" POS="N">Ambassador</W>
+				<W DEP="W178" FUNC="A" ID="W177" LEMMA="Anthony" POS="N">Anthony</W>
+				<W DEP="W185" FUNC="SUBJ" ID="W178" LEMMA="Vincent" POS="N">Vincent</W>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W183" ID="16" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W178" FUNC="APP" ID="W180" LEMMA="one" POS="NUM">one</W>
+					<W DEP="W180" FUNC="NOM-OF" ID="W181" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W183" ID="17" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="238" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W183" FUNC="DN" ID="W182" LEMMA="the" POS="DET">the</W>
+						<W DEP="W181" FUNC="P" ID="W183" LEMMA="mediator" POS="N">mediators</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="none" FUNC="+FMAINV" ID="W185" LEMMA="say" POS="V">said</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W192" ID="18" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'group', 'phenomenon', 'cognition', 'artifact']">
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W187" ID="19" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'action', 'event', 'cognition']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="239" SRC="4" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W187" FUNC="DN" ID="W186" LEMMA="the" POS="DET">the</W>
+					<W DEP="W185" FUNC="OBJ" ID="W187" LEMMA="government" POS="N">government</W>
+				</MARKABLE>
+				<W DEP="W185" FUNC="CC" ID="W188" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="i don't think this is exactly the same as the hostage-takers - this is the whole oranisation" HEAD="W192" ID="20" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'group', 'phenomenon', 'cognition', 'artifact']">
+					<W DEP="W190" FUNC="A" ID="W189" LEMMA="Tupac" POS="N">Tupac</W>
+					<W DEP="W191" FUNC="A" ID="W190" LEMMA="Amaru" POS="N">Amaru</W>
+					<W DEP="W192" FUNC="A" ID="W191" LEMMA="revolutionary" POS="A">Revolutionary</W>
+					<W DEP="W196" FUNC="SUBJ" ID="W192" LEMMA="movement" POS="N">Movement</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W194" ID="21" NUMBER="S" PROPER_NAME="T" SEMANTIC_CLASS="['group']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="240" SRC="20" TYPE_REF="BRACKETED_TEXT" TYPE_REL="IDENT"/>
+						<PUNCT>(</PUNCT>
+						<W DEP="W192" FUNC="NH" ID="W194" LEMMA="mrta" POS="N">MRTA</W>
+						<PUNCT>)</PUNCT>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W185" FUNC="+FMAINV" ID="W196" LEMMA="agree" POS="V">agreed</W>
+			<W DEP="W196" FUNC="ADVL" ID="W197" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W198" ID="22" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<W DEP="W197" FUNC="P" ID="W198" LEMMA="Saturday" POS="N">Saturday</W>
+			</MARKABLE>
+			<W DEP="W200" FUNC="INFMARK" ID="W199" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W198" FUNC="-FMAINV" ID="W200" LEMMA="allow" POS="V">allow</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W201" ID="23" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="241" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W200" FUNC="OBJ" ID="W201" LEMMA="mediator" POS="N">mediators</W>
+			</MARKABLE>
+			<W DEP="W204" FUNC="INFMARK" ID="W202" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<PUNCT>"_</PUNCT>
+			<W DEP="W201" FUNC="-FMAINV" ID="W204" LEMMA="elaborate" POS="V">elaborate</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W206" ID="24" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+				<W DEP="W206" FUNC="DN" ID="W205" LEMMA="a" POS="DET">a</W>
+				<W DEP="W204" FUNC="OBJ" ID="W206" LEMMA="proposal" POS="N">proposal</W>
+				<W DEP="W208" FUNC="SUBJ" ID="W207" LEMMA="that" POS="PRON">that</W>
+				<W DEP="W209" FUNC="+FAUXV" ID="W208" LEMMA="will" POS="V">will</W>
+				<W DEP="W206" FUNC="-FMAINV" ID="W209" LEMMA="facilitate" POS="V">facilitate</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W211" ID="25" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'cognition']">
+					<W DEP="W211" FUNC="DN" ID="W210" LEMMA="the" POS="DET">the</W>
+					<W DEP="W209" FUNC="OBJ" ID="W211" LEMMA="continuation" POS="N">continuation</W>
+					<W DEP="W211" FUNC="NOM-OF" ID="W212" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="i don't think this is coreferential with any previous mention of talks." HEAD="W215" ID="26" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<W DEP="W215" FUNC="DN" ID="W213" LEMMA="the" POS="DET">the</W>
+						<W DEP="W215" FUNC="A" ID="W214" LEMMA="preliminary" POS="A">preliminary</W>
+						<W DEP="W212" FUNC="P" ID="W215" LEMMA="conversation" POS="N">conversations</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+			<PUNCT>_"</PUNCT>
+		</S>
+	</P>
+	<P ID="5">
+		<S ID="S7">
+			<W DEP="W296" FUNC="ADVL" ID="W290" LEMMA="in" POS="PREP">In</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W293" ID="27" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+				<W DEP="W293" FUNC="DN" ID="W291" LEMMA="a" POS="DET">a</W>
+				<W DEP="W293" FUNC="A" ID="W292" LEMMA="brief" POS="A">brief</W>
+				<W DEP="W290" FUNC="P" ID="W293" LEMMA="statement" POS="N">statement</W>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W295" ID="28" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="243" SRC="15" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W296" FUNC="SUBJ" ID="W295" LEMMA="Vincent" POS="N">Vincent</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W296" LEMMA="say" POS="V">said</W>
+			<W DEP="W296" FUNC="ADVL" ID="W297" LEMMA="only" POS="ADV">only</W>
+			<W DEP="W310" FUNC="CS" ID="W298" LEMMA="that" POS="CS">that</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W299" ID="29" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="244" SRC="1" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W309" FUNC="SUBJ" ID="W299" LEMMA="talk" POS="N">talks</W>
+				<W DEP="W301" FUNC="INFMARK" ID="W300" LEMMA="to" POS="INFMARK&gt;">to</W>
+				<W DEP="W299" FUNC="-FMAINV" ID="W301" LEMMA="end" POS="V">end</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W303" ID="30" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="245" SRC="11" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W303" FUNC="DN" ID="W302" LEMMA="the" POS="DET">the</W>
+					<W DEP="W301" FUNC="PCOMPL-S" ID="W303" LEMMA="siege" POS="N">siege</W>
+					<W DEP="W301" FUNC="ADVL" ID="W304" LEMMA="at" POS="PREP">at</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W308" ID="31" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'artifact', 'state', 'group']">
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W307" ID="32" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+							<W DEP="W308" FUNC="DN" ID="W305" LEMMA="the" POS="DET">the</W>
+							<W DEP="W307" FUNC="A" ID="W306" LEMMA="Japanese" POS="A">Japanese</W>
+							<W DEP="W308" FUNC="A" ID="W307" LEMMA="ambassador" POS="N">ambassador's</W>
+						</MARKABLE>
+						<W DEP="W304" FUNC="P" ID="W308" LEMMA="home" POS="N">home</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W310" FUNC="+FAUXV" ID="W309" LEMMA="would" POS="V">would</W>
+			<W DEP="W296" FUNC="-FMAINV" ID="W310" LEMMA="continue" POS="V">continue</W>
+			<PUNCT>"_</PUNCT>
+			<W DEP="W313" FUNC="AD-A" ID="W312" LEMMA="as" POS="ADV">as</W>
+			<W DEP="none" FUNC="ADVL" ID="W313" LEMMA="soon" POS="ADV">soon</W>
+			<W DEP="none" FUNC="ADVL" ID="W314" LEMMA="as" POS="PREP">as</W>
+			<W DEP="W314" FUNC="P" ID="W315" LEMMA="possible" POS="A">possible</W>
+			<PUNCT>.</PUNCT>
+			<PUNCT>_"</PUNCT>
+		</S>
+	</P>
+	<P ID="6">
+		<S ID="S8">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W369" ID="33" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="246" SRC="26" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W369" FUNC="DN" ID="W366" LEMMA="the" POS="DET">The</W>
+				<W DEP="W368" FUNC="A" ID="W367" LEMMA="face-to-face" POS="A">face-to-face</W>
+				<W DEP="W369" FUNC="A" ID="W368" LEMMA="preliminary" POS="A">preliminary</W>
+				<W DEP="W370" FUNC="SUBJ" ID="W369" LEMMA="talk" POS="N">talks</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W370" LEMMA="aim" POS="V">aim</W>
+			<W DEP="W372" FUNC="INFMARK" ID="W371" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W370" FUNC="-FMAINV" ID="W372" LEMMA="fix" POS="V">fix</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W374" ID="34" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['cognition']">
+				<W DEP="W374" FUNC="DN" ID="W373" LEMMA="an" POS="DET">an</W>
+				<W DEP="W372" FUNC="OBJ" ID="W374" LEMMA="agenda" POS="N">agenda</W>
+				<W DEP="W374" FUNC="NOM" ID="W375" LEMMA="for" POS="PREP">for</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W377" ID="35" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+					<W DEP="W377" FUNC="A" ID="W376" LEMMA="future" POS="N">future</W>
+					<W DEP="W375" FUNC="P" ID="W377" LEMMA="negotiation" POS="N">negotiations</W>
+					<W DEP="W379" FUNC="INFMARK" ID="W378" LEMMA="to" POS="INFMARK&gt;">to</W>
+					<W DEP="W377" FUNC="-FMAINV" ID="W379" LEMMA="end" POS="V">end</W>
+					<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W381" ID="36" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'event']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="247" SRC="11" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+						<W DEP="W381" FUNC="DN" ID="W380" LEMMA="the" POS="DET">the</W>
+						<W DEP="W379" FUNC="PCOMPL-S" ID="W381" LEMMA="crisis" POS="N">crisis</W>
+						<PUNCT>,</PUNCT>
+						<W DEP="W384" FUNC="SUBJ" ID="W383" LEMMA="which" POS="PRON">which</W>
+						<W DEP="W379" FUNC="+FMAINV" ID="W384" LEMMA="begin" POS="V">began</W>
+						<W DEP="W388" FUNC="ADVL" ID="W385" LEMMA="when" POS="ADV">when</W>
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W387" ID="37" NUMBER="S" PROPER_NAME="T" SEMANTIC_CLASS="['group']">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="248" SRC="20" TYPE_REF="NP" TYPE_REL="IDENT"/>
+							<W DEP="W387" FUNC="DN" ID="W386" LEMMA="the" POS="DET">the</W>
+							<W DEP="W388" FUNC="SUBJ" ID="W387" LEMMA="mrta" POS="N">MRTA</W>
+						</MARKABLE>
+						<W DEP="W384" FUNC="+FMAINV" ID="W388" LEMMA="storm" POS="V">stormed</W>
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W390" ID="38" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'artifact', 'action', 'event']">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="249" SRC="31" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+							<W DEP="W391" FUNC="DN" ID="W389" LEMMA="the" POS="DET">the</W>
+							<W DEP="W391" FUNC="A" ID="W390" LEMMA="residence" POS="N">residence</W>
+						</MARKABLE>
+						<MARKABLE COMMENT="" ID="39">
+							<W DEP="W388" FUNC="OBJ" ID="W391" LEMMA="Dec." POS="ABBR">Dec.</W>
+							<W DEP="W391" FUNC="NOM" ID="W392" LEMMA="17" POS="NUM">17</W>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="7">
+		<S ID="S9">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W448" ID="40" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'event', 'action', 'location']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W446" ID="41" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="250" SRC="22" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W447" FUNC="A" ID="W446" LEMMA="Saturday" POS="N">Saturday's</W>
+				</MARKABLE>
+				<W DEP="W448" FUNC="A" ID="W447" LEMMA="three-hour" POS="A">three-hour</W>
+				<W DEP="W455" FUNC="SUBJ" ID="W448" LEMMA="meet" POS="N">meeting</W>
+				<W DEP="W448" FUNC="NOM" ID="W449" LEMMA="at" POS="PREP">at</W>
+				<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W454" ID="42" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'group', 'action', 'event', 'location']">
+					<W DEP="W454" FUNC="DN" ID="W450" LEMMA="a" POS="DET">a</W>
+					<W DEP="W452" FUNC="A" ID="W451" LEMMA="red" POS="A">Red</W>
+					<W DEP="W453" FUNC="A" ID="W452" LEMMA="cross" POS="N">Cross</W>
+					<W DEP="W454" FUNC="A" ID="W453" LEMMA="safe" POS="N">safe</W>
+					<W DEP="W449" FUNC="P" ID="W454" LEMMA="house" POS="N">house</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W479" FUNC="+FMAINV" ID="W455" LEMMA="be" POS="V">was</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W476" ID="43" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="267" SRC="40" TYPE_REF="COPULAR" TYPE_REL="SYNONYM"/>
+				<W DEP="W458" FUNC="DN" ID="W456" LEMMA="the" POS="DET">the</W>
+				<W DEP="W458" FUNC="A" ID="W457" LEMMA="third" POS="NUM">third</W>
+				<W DEP="W455" FUNC="PCOMPL-S" ID="W458" LEMMA="round" POS="N">round</W>
+				<W DEP="W458" FUNC="NOM-OF" ID="W459" LEMMA="of" POS="PREP">of</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W460" ID="44" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="251" SRC="1" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W459" FUNC="P" ID="W460" LEMMA="talk" POS="N">talks</W>
+				</MARKABLE>
+				<W DEP="W455" FUNC="ADVL" ID="W461" LEMMA="in" POS="PREP">in</W>
+				<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W463" ID="45" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W463" FUNC="DN" ID="W462" LEMMA="a" POS="DET">a</W>
+					<W DEP="W461" FUNC="P" ID="W463" LEMMA="week" POS="N">week</W>
+				</MARKABLE>
+				<W DEP="W463" FUNC="NOM" ID="W464" LEMMA="between" POS="PREP">between</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W476" ID="46" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<UCOREF CERTAIN="FALSE" COMMENT="unsure if this is coreferential because the first NP is organisations and this is individuals, but they are representing the organisations, so it's not the whole organisations in tlaks, just these individuals representing them. But there may be other references to &quot;peru's government&quot; and &quot;leftist rebels&quot; which will really complicate this! the same goes for the individual NPs which constitute this larger one." ID="254" SRC="3" TYPE_REF="NP" TYPE_REL="SPECIALISATION" UNCERTAIN="ANNOTATOR"/>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W470" ID="47" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location']">
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W467" ID="48" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+							<W DEP="W466" FUNC="A" ID="W465" LEMMA="president" POS="N">President</W>
+							<W DEP="W467" FUNC="A" ID="W466" LEMMA="Alberto" POS="N">Alberto</W>
+							<W DEP="W468" FUNC="A" ID="W467" LEMMA="Fujimori" POS="N">Fujimori's</W>
+						</MARKABLE>
+						<W DEP="W469" FUNC="A" ID="W468" LEMMA="negotiator" POS="N">negotiator</W>
+						<W DEP="W470" FUNC="A" ID="W469" LEMMA="Domingo" POS="N">Domingo</W>
+						<W DEP="W464" FUNC="P" ID="W470" LEMMA="Palermo" POS="N">Palermo</W>
+					</MARKABLE>
+					<W DEP="W470" FUNC="CC" ID="W471" LEMMA="and" POS="CC">and</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W476" ID="49" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<W DEP="W470" FUNC="P" ID="W472" LEMMA="mrta" POS="N">MRTA</W>
+						<W DEP="none" FUNC="SUBJ" ID="W473" LEMMA="No" POS="ABBR">No.</W>
+						<W DEP="W476" FUNC="QN" ID="W474" LEMMA="2" POS="NUM">2</W>
+						<W DEP="W476" FUNC="A" ID="W475" LEMMA="Rolly" POS="N">Rolly</W>
+						<W DEP="none" FUNC="SUBJ" ID="W476" LEMMA="Rojas" POS="N">Rojas</W>
+						<PUNCT>,</PUNCT>
+						<W DEP="W479" FUNC="SUBJ" ID="W478" LEMMA="who" POS="PRON">who</W>
+						<W DEP="none" FUNC="+FMAINV" ID="W479" LEMMA="go" POS="V">goes</W>
+						<W DEP="W479" FUNC="ADVL" ID="W480" LEMMA="by" POS="PREP">by</W>
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W482" ID="50" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation']">
+							<W DEP="W482" FUNC="DN" ID="W481" LEMMA="the" POS="DET">the</W>
+							<W DEP="W480" FUNC="P" ID="W482" LEMMA="nom_de_guerre" POS="N">nom_de_guerre</W>
+							<PUNCT>"_</PUNCT>
+							<W DEP="W485" FUNC="A" ID="W484" LEMMA="el" POS="N">El</W>
+							<W DEP="W489" FUNC="A" ID="W485" LEMMA="arabe" POS="N">Arabe</W>
+							<PUNCT>_"</PUNCT>
+							<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W489" ID="51" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['person', 'animal']">
+								<COREF CERTAIN="TRUE" COMMENT="translation" ID="255" SRC="50" TYPE_REF="BRACKETED_TEXT" TYPE_REL="OTHER"/>
+								<PUNCT>(</PUNCT>
+								<W DEP="W489" FUNC="DN" ID="W488" LEMMA="the" POS="DET">The</W>
+								<W DEP="W482" FUNC="NH" ID="W489" LEMMA="Arab" POS="N">Arab</W>
+								<PUNCT>)</PUNCT>
+							</MARKABLE>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="8">
+		<S ID="S10">
+			<W DEP="W581" FUNC="ADVL" ID="W572" LEMMA="also" POS="ADV">Also</W>
+			<W DEP="W581" FUNC="SUBJ" ID="W573" LEMMA="present" POS="N">present</W>
+			<W DEP="W573" FUNC="NOM" ID="W574" LEMMA="at" POS="PREP">at</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W576" ID="52" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'event', 'action', 'location']">
+				<COREF CERTAIN="TRUE" COMMENT="this is coreferential because it is about the actual talks" ID="260" SRC="2" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W576" FUNC="DN" ID="W575" LEMMA="the" POS="DET">the</W>
+				<W DEP="W574" FUNC="P" ID="W576" LEMMA="meeting" POS="N">meetings</W>
+				<W DEP="W576" FUNC="NOM" ID="W577" LEMMA="between" POS="PREP">between</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W578" ID="53" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="257" SRC="46" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W578" ID="54" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="258" SRC="47" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W577" FUNC="P" ID="W578" LEMMA="Palermo" POS="N">Palermo</W>
+					</MARKABLE>
+					<W DEP="W578" FUNC="CC" ID="W579" LEMMA="and" POS="CC">and</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W580" ID="55" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="259" SRC="49" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W578" FUNC="P" ID="W580" LEMMA="Rojas" POS="N">Rojas</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W581" LEMMA="be" POS="V">were</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W582" ID="57" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W582" ID="58" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="261" SRC="15" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W581" FUNC="PCOMPL-S" ID="W582" LEMMA="Vincent" POS="N">Vincent</W>
+				</MARKABLE>
+				<W DEP="W582" FUNC="CC" ID="W583" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W597" ID="59" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<W DEP="W585" FUNC="A" ID="W584" LEMMA="fellow" POS="N">fellow</W>
+					<W DEP="W586" FUNC="A" ID="W585" LEMMA="mediator" POS="N">mediators</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W591" ID="60" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<W DEP="W587" FUNC="A" ID="W586" LEMMA="roman" POS="A">Roman</W>
+						<W DEP="W588" FUNC="A" ID="W587" LEMMA="catholic" POS="A">Catholic</W>
+						<W DEP="W589" FUNC="A" ID="W588" LEMMA="bishop" POS="N">Bishop</W>
+						<W DEP="W590" FUNC="A" ID="W589" LEMMA="Juan" POS="N">Juan</W>
+						<W DEP="W591" FUNC="A" ID="W590" LEMMA="Luis" POS="N">Luis</W>
+						<W DEP="W582" FUNC="PCOMPL-S" ID="W591" LEMMA="Cipriani" POS="N">Cipriani</W>
+					</MARKABLE>
+					<PUNCT>,</PUNCT>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W597" ID="61" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<W DEP="W594" FUNC="A" ID="W593" LEMMA="red" POS="A">Red</W>
+						<W DEP="W595" FUNC="A" ID="W594" LEMMA="cross" POS="N">Cross</W>
+						<W DEP="W596" FUNC="A" ID="W595" LEMMA="representative" POS="A">representative</W>
+						<W DEP="W597" FUNC="A" ID="W596" LEMMA="Michel" POS="N">Michel</W>
+						<W DEP="W599" FUNC="A" ID="W597" LEMMA="minnig" POS="N">Minnig</W>
+					</MARKABLE>
+				</MARKABLE>
+				<W DEP="W599" FUNC="CC" ID="W598" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W603" ID="62" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W599" ID="63" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<W DEP="W600" FUNC="A" ID="W599" LEMMA="Japan" POS="N">Japan's</W>
+					</MARKABLE>
+					<W DEP="W601" FUNC="A" ID="W600" LEMMA="talk" POS="N">talks</W>
+					<W DEP="W602" FUNC="A" ID="W601" LEMMA="observer" POS="N">observer</W>
+					<W DEP="W603" FUNC="A" ID="W602" LEMMA="teruke" POS="N">Teruke</W>
+					<W DEP="W591" FUNC="SUBJ" ID="W603" LEMMA="Terada" POS="N">Terada</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="9">
+		<S ID="S11">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W668" ID="64" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W667" ID="65" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="262" SRC="22" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W668" FUNC="A" ID="W667" LEMMA="Saturday" POS="N">Saturday's</W>
+				</MARKABLE>
+				<W DEP="none" FUNC="NH" ID="W668" LEMMA="statement" POS="N">statement</W>
+				<W DEP="W668" FUNC="NOM" ID="W669" LEMMA="from" POS="PREP">from</W>
+				<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="i don't know who this is referring to" HEAD="W671" ID="66" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W671" FUNC="DN" ID="W670" LEMMA="the" POS="DET">the</W>
+					<W DEP="W669" FUNC="P" ID="W671" LEMMA="guarantor" POS="N">guarantors</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W671" FUNC="-FMAINV" ID="W672" LEMMA="contrast" POS="EN">contrasted</W>
+			<W DEP="W672" FUNC="ADVL" ID="W673" LEMMA="with" POS="PREP">with</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W675" ID="68" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact']">
+				<W DEP="W675" FUNC="QN" ID="W674" LEMMA="one" POS="NUM">one</W>
+				<W DEP="W673" FUNC="P" ID="W675" LEMMA="read" POS="N">read</W>
+				<W DEP="W672" FUNC="ADVL" ID="W676" LEMMA="after" POS="PREP">after</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W679" ID="69" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W679" FUNC="DN" ID="W677" LEMMA="a" POS="DET">a</W>
+					<W DEP="W679" FUNC="A" ID="W678" LEMMA="meet" POS="N">meeting</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W679" ID="275" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+						<W DEP="W676" FUNC="P" ID="W679" LEMMA="Friday" POS="N">Friday</W>
+						<PUNCT>,</PUNCT>
+						<W DEP="W683" FUNC="ADVL" ID="W681" LEMMA="when" POS="ADV">when</W>
+						<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W682" ID="70" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="263" SRC="0" TYPE_REF="NP" TYPE_REL="IDENT"/>
+							<W DEP="W683" FUNC="SUBJ" ID="W682" LEMMA="mediator" POS="N">mediators</W>
+						</MARKABLE>
+						<W DEP="none" FUNC="+FMAINV" ID="W683" LEMMA="say" POS="V">said</W>
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W686" ID="71" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'group', 'artifact', 'property', 'cognition', 'event']">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="264" SRC="3" TYPE_REF="NP" TYPE_REL="GENERALISATION"/>
+							<W DEP="W686" FUNC="DN" ID="W684" LEMMA="the" POS="DET">the</W>
+							<W DEP="W686" FUNC="QN" ID="W685" LEMMA="two" POS="NUM">two</W>
+							<W DEP="W687" FUNC="SUBJ" ID="W686" LEMMA="side" POS="N">sides</W>
+						</MARKABLE>
+						<W DEP="W688" FUNC="+FAUXV" ID="W687" LEMMA="have" POS="V">had</W>
+						<W DEP="W683" FUNC="-FMAINV" ID="W688" LEMMA="make" POS="EN">made</W>
+						<PUNCT>"_</PUNCT>
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W691" ID="72" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+							<W DEP="W691" FUNC="A" ID="W690" LEMMA="real" POS="A">real</W>
+							<W DEP="W688" FUNC="OBJ" ID="W691" LEMMA="progress" POS="N">progress</W>
+						</MARKABLE>
+						<PUNCT>.</PUNCT>
+						<PUNCT>_"</PUNCT>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+		</S>
+	</P>
+	<P ID="10">
+		<S ID="S12">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W740" ID="73" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="265" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W741" FUNC="SUBJ" ID="W740" LEMMA="Fujimori" POS="N">Fujimori</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W741" LEMMA="be" POS="V">was</W>
+			<W DEP="W741" FUNC="ADVL" ID="W742" LEMMA="away" POS="ADV">away</W>
+			<W DEP="W741" FUNC="ADVL" ID="W743" LEMMA="from" POS="PREP">from</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W744" ID="74" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location']">
+				<W DEP="W743" FUNC="P" ID="W744" LEMMA="Lima" POS="N">Lima</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="NOM" ID="W745" LEMMA="for" POS="PREP">for</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W747" ID="75" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="269" SRC="40" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W746" ID="76" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="268" SRC="22" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W747" FUNC="A" ID="W746" LEMMA="Saturday" POS="N">Saturday's</W>
+				</MARKABLE>
+				<W DEP="W745" FUNC="P" ID="W747" LEMMA="talk" POS="N">talks</W>
+			</MARKABLE>
+			<W DEP="W747" FUNC="NOM" ID="W748" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W750" ID="77" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'group']">
+				<W DEP="W750" FUNC="DN" ID="W749" LEMMA="a" POS="DET">a</W>
+				<W DEP="W748" FUNC="P" ID="W750" LEMMA="visit" POS="N">visit</W>
+				<W DEP="none" FUNC="NOM" ID="W751" LEMMA="to" POS="PREP">to</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W755" ID="78" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'state']">
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W752" ID="79" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+						<COREF CERTAIN="TRUE" COMMENT="geographical" ID="270" SRC="6" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W753" FUNC="A" ID="W752" LEMMA="Peru" POS="N">Peru's</W>
+					</MARKABLE>
+					<W DEP="W754" FUNC="A" ID="W753" LEMMA="central" POS="A">central</W>
+					<W DEP="W755" FUNC="A" ID="W754" LEMMA="jungle" POS="N">jungle</W>
+					<W DEP="W751" FUNC="P" ID="W755" LEMMA="province" POS="N">province</W>
+					<W DEP="W755" FUNC="NOM-OF" ID="W756" LEMMA="of" POS="PREP">of</W>
+					<W DEP="W756" FUNC="P" ID="W757" LEMMA="Satipo" POS="N">Satipo</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W759" FUNC="INFMARK" ID="W758" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W757" FUNC="-FMAINV" ID="W759" LEMMA="inaugurate" POS="V">inaugurate</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W761" ID="80" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person', 'artifact', 'relation', 'action', 'event']">
+				<W DEP="W761" FUNC="QN" ID="W760" LEMMA="two" POS="NUM">two</W>
+				<W DEP="W759" FUNC="OBJ" ID="W761" LEMMA="bridge" POS="N">bridges</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+		<S ID="S13">
+			<W DEP="W818" FUNC="ADVL" ID="W807" LEMMA="in" POS="PREP">In</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W809" ID="81" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'cognition']">
+				<W DEP="W809" FUNC="DN" ID="W808" LEMMA="a" POS="DET">a</W>
+				<W DEP="W807" FUNC="P" ID="W809" LEMMA="speech" POS="N">speech</W>
+				<W DEP="W809" FUNC="-FMAINV" ID="W810" LEMMA="monitor" POS="EN">monitored</W>
+				<W DEP="W810" FUNC="ADVL" ID="W811" LEMMA="on" POS="PREP">on</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W813" ID="82" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact']">
+					<W DEP="W813" FUNC="A" ID="W812" LEMMA="local" POS="A">local</W>
+					<W DEP="W811" FUNC="P" ID="W813" LEMMA="radio" POS="N">radio</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<MARKABLE COMMENT="" ID="83">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="271" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W816" FUNC="SUBJ" ID="W815" LEMMA="he" POS="PRON">he</W>
+			</MARKABLE>
+			<W DEP="W818" FUNC="+FAUXV" ID="W816" LEMMA="do" POS="V">did</W>
+			<W DEP="W816" FUNC="ADVL" ID="W817" LEMMA="not" POS="NEG-PART">not</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W818" LEMMA="comment" POS="V">comment</W>
+			<W DEP="W818" FUNC="ADVL" ID="W819" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W822" ID="84" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'location', 'action', 'event']">
+				<W DEP="W822" FUNC="DN" ID="W820" LEMMA="the" POS="DET">the</W>
+				<W DEP="W822" FUNC="A" ID="W821" LEMMA="hostage" POS="N">hostage</W>
+				<W DEP="W819" FUNC="P" ID="W822" LEMMA="situation" POS="N">situation</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="11">
+		<S ID="S14">
+			<MARKABLE COMMENT="" ID="85">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="273" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W856" FUNC="SUBJ" ID="W854" LEMMA="he" POS="PRON">He</W>
+			</MARKABLE>
+			<W DEP="W856" FUNC="ADVL" ID="W855" LEMMA="also" POS="ADV">also</W>
+			<W DEP="none" FUNC="+FMAINV" ID="W856" LEMMA="be" POS="V">was</W>
+			<W DEP="W856" FUNC="ADVL" ID="W857" LEMMA="out_of" POS="PREP">out_of</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W858" ID="89" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'group']">
+				<W DEP="W857" FUNC="P" ID="W858" LEMMA="town" POS="N">town</W>
+			</MARKABLE>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W859" ID="86" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W859" ID="87" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="276" SRC="275" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W856" FUNC="ADVL" ID="W859" LEMMA="Friday" POS="N">Friday</W>
+				</MARKABLE>
+				<W DEP="W859" FUNC="CC" ID="W860" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W861" ID="88" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W859" FUNC="ADVL" ID="W861" LEMMA="Tuesday" POS="N">Tuesday</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="W867" FUNC="ADVL" ID="W863" LEMMA="when" POS="ADV">when</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W866" ID="90" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'group', 'artifact', 'property', 'cognition', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="277" SRC="3" TYPE_REF="NP" TYPE_REL="GENERALISATION"/>
+				<W DEP="W866" FUNC="DN" ID="W864" LEMMA="the" POS="DET">the</W>
+				<W DEP="W866" FUNC="QN" ID="W865" LEMMA="two" POS="NUM">two</W>
+				<W DEP="W867" FUNC="SUBJ" ID="W866" LEMMA="side" POS="N">sides</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W867" LEMMA="break" POS="V">broke</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W869" ID="91" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+				<W DEP="W869" FUNC="DN" ID="W868" LEMMA="a" POS="DET">a</W>
+				<W DEP="W867" FUNC="OBJ" ID="W869" LEMMA="deadlock" POS="N">deadlock</W>
+			</MARKABLE>
+			<W DEP="W867" FUNC="CC" ID="W870" LEMMA="and" POS="CC">and</W>
+			<W DEP="W867" FUNC="+FMAINV" ID="W871" LEMMA="meet" POS="V">met</W>
+			<W DEP="W871" FUNC="ADVL" ID="W872" LEMMA="for" POS="PREP">for</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W875" ID="92" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['event', 'time', 'measure', 'cognition']">
+				<W DEP="W875" FUNC="DN" ID="W873" LEMMA="the" POS="DET">the</W>
+				<W DEP="W875" FUNC="A" ID="W874" LEMMA="first" POS="NUM">first</W>
+				<W DEP="W872" FUNC="P" ID="W875" LEMMA="time" POS="N">time</W>
+				<W DEP="W875" FUNC="NOM" ID="W876" LEMMA="since" POS="PREP">since</W>
+				<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W892" ID="93" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W876" FUNC="P" ID="W877" LEMMA="Dec." POS="ABBR">Dec.</W>
+					<W DEP="W877" FUNC="NOM" ID="W878" LEMMA="28" POS="NUM">28</W>
+					<W DEP="W882" FUNC="ADVL" ID="W879" LEMMA="when" POS="ADV">when</W>
+					<W DEP="W881" FUNC="A" ID="W880" LEMMA="face-to-face" POS="A">face-to-face</W>
+					<W DEP="W882" FUNC="SUBJ" ID="W881" LEMMA="talk" POS="N">talks</W>
+					<W DEP="W871" FUNC="+FMAINV" ID="W882" LEMMA="stall" POS="V">stalled</W>
+					<W DEP="W882" FUNC="ADVL" ID="W883" LEMMA="on" POS="PREP">on</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W886" ID="94" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'state']">
+						<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W885" ID="95" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="278" SRC="5" TYPE_REF="NP" TYPE_REL="IDENT"/>
+							<W DEP="W886" FUNC="DN" ID="W884" LEMMA="the" POS="DET">the</W>
+							<W DEP="W886" FUNC="A" ID="W885" LEMMA="rebel" POS="N">rebels'</W>
+						</MARKABLE>
+						<W DEP="W883" FUNC="P" ID="W886" LEMMA="demand" POS="N">demand</W>
+						<W DEP="W886" FUNC="NOM-OF" ID="W887" LEMMA="of" POS="PREP">of</W>
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W888" ID="96" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="279" SRC="94" TYPE_REF="NP" TYPE_REL="SPECIALISATION"/>
+							<W DEP="W887" FUNC="P" ID="W888" LEMMA="freedom" POS="N">freedom</W>
+							<W DEP="W888" FUNC="NOM" ID="W889" LEMMA="for" POS="PREP">for</W>
+							<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W892" ID="97" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+								<W DEP="W892" FUNC="QN" ID="W890" LEMMA="400" POS="NUM">400</W>
+								<W DEP="W892" FUNC="A" ID="W891" LEMMA="jail" POS="A">jailed</W>
+								<W DEP="W889" FUNC="P" ID="W892" LEMMA="comrade" POS="N">comrades</W>
+							</MARKABLE>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="12">
+		<S ID="S15">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W970" ID="98" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="280" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W971" FUNC="SUBJ" ID="W970" LEMMA="Fujimori" POS="N">Fujimori</W>
+			</MARKABLE>
+			<W DEP="W973" FUNC="+FAUXV" ID="W971" LEMMA="have" POS="V">has</W>
+			<W DEP="W973" FUNC="ADVL" ID="W972" LEMMA="adamant" POS="ADV">adamantly</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W973" LEMMA="refuse" POS="EN">refused</W>
+			<W DEP="W975" FUNC="INFMARK" ID="W974" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W973" FUNC="-FMAINV" ID="W975" LEMMA="discuss" POS="V">discuss</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W977" ID="99" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['cognition', 'artifact', 'action', 'event', 'relation']">
+				<W DEP="W977" FUNC="DN" ID="W976" LEMMA="the" POS="DET">the</W>
+				<W DEP="W975" FUNC="OBJ" ID="W977" LEMMA="issue" POS="N">issue</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="13">
+		<S ID="S16">
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W997" ID="100" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event']">
+				<W DEP="W997" FUNC="DN" ID="W995" LEMMA="an" POS="DET">An</W>
+				<W DEP="W997" FUNC="A" ID="W996" LEMMA="mrta" POS="N">MRTA</W>
+				<W DEP="W1004" FUNC="SUBJ" ID="W997" LEMMA="statement" POS="N">statement</W>
+				<W DEP="W997" FUNC="-FMAINV" ID="W998" LEMMA="send" POS="EN">sent</W>
+				<W DEP="W998" FUNC="ADVL" ID="W999" LEMMA="to" POS="PREP">to</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1000" ID="101" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<W DEP="W999" FUNC="P" ID="W1000" LEMMA="Reuters" POS="N">Reuters</W>
+				</MARKABLE>
+				<W DEP="W1000" FUNC="NOM" ID="W1001" LEMMA="via" POS="PREP">via</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1003" ID="102" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event', 'artifact', 'group']">
+					<W DEP="W1003" FUNC="A" ID="W1002" LEMMA="electronic" POS="A">electronic</W>
+					<W DEP="W1001" FUNC="P" ID="W1003" LEMMA="mail" POS="N">mail</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W1004" LEMMA="say" POS="V">said</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1006" ID="103" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="281" SRC="84" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W1006" FUNC="DN" ID="W1005" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1008" FUNC="SUBJ" ID="W1006" LEMMA="crisis" POS="N">crisis</W>
+			</MARKABLE>
+			<PUNCT>"_</PUNCT>
+			<W DEP="W1009" FUNC="+FAUXV" ID="W1008" LEMMA="be" POS="V">is</W>
+			<W DEP="W1010" FUNC="-FAUXV" ID="W1009" LEMMA="be" POS="ING">being</W>
+			<W DEP="W1004" FUNC="-FMAINV" ID="W1010" LEMMA="prolong" POS="EN">prolonged</W>
+			<W DEP="W1012" FUNC="ADVL" ID="W1011" LEMMA="not" POS="NEG-PART">not</W>
+			<W DEP="W1010" FUNC="ADVL" ID="W1012" LEMMA="through" POS="PREP">through</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1020" ID="104" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'group', 'state']">
+				<W DEP="W1014" FUNC="DN" ID="W1013" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1012" FUNC="P" ID="W1014" LEMMA="intransigence" POS="N">intransigence</W>
+				<W DEP="W1014" FUNC="NOM-OF" ID="W1015" LEMMA="of" POS="PREP">of</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1020" ID="105" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['action', 'event', 'group', 'state']">
+					<W DEP="W1018" FUNC="DN" ID="W1016" LEMMA="the" POS="DET">the</W>
+					<PUNCT>(</PUNCT>
+					<W DEP="none" FUNC="NH" ID="W1018" LEMMA="rebel" POS="N">rebel</W>
+					<PUNCT>)</PUNCT>
+					<W DEP="none" FUNC="NH" ID="W1020" LEMMA="command" POS="N">command</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="none" FUNC="ADVL" ID="W1021" LEMMA="but" POS="ADV">but</W>
+			<W DEP="none" FUNC="ADVL" ID="W1022" LEMMA="through" POS="PREP">through</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1024" ID="106" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['cognition']">
+				<W DEP="W1024" FUNC="DN" ID="W1023" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1022" FUNC="P" ID="W1024" LEMMA="intolerance" POS="N">intolerance</W>
+				<W DEP="W1024" FUNC="NOM-OF" ID="W1025" LEMMA="of" POS="PREP">of</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1028" ID="107" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group']">
+					<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1028" ID="108" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group']">
+						<W DEP="W1028" FUNC="DN" ID="W1026" LEMMA="the" POS="DET">the</W>
+						<W DEP="W1028" FUNC="A" ID="W1027" LEMMA="Fujimori" POS="N">Fujimori</W>
+						<W DEP="W1025" FUNC="P" ID="W1028" LEMMA="dictatorship" POS="N">dictatorship</W>
+					</MARKABLE>
+					<W DEP="W1028" FUNC="CC" ID="W1029" LEMMA="and" POS="CC">and</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1032" ID="109" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group']">
+						<MARKABLE COMMENT="" ID="110">
+							<COREF CERTAIN="TRUE" COMMENT="" ID="282" SRC="108" TYPE_REF="NP" TYPE_REL="IDENT"/>
+							<W DEP="W1031" FUNC="A" ID="W1030" LEMMA="it" POS="PRON">its</W>
+						</MARKABLE>
+						<W DEP="W1032" FUNC="A" ID="W1031" LEMMA="military" POS="A">military</W>
+						<W DEP="W1028" FUNC="P" ID="W1032" LEMMA="ally" POS="N">allies</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+			<PUNCT>_"</PUNCT>
+		</S>
+	</P>
+	<P ID="14">
+		<S ID="S17">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1106" ID="111" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="283" SRC="100" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W1106" FUNC="DN" ID="W1105" LEMMA="the" POS="DET">The</W>
+				<W DEP="W1116" FUNC="SUBJ" ID="W1106" LEMMA="communique" POS="N">communique</W>
+				<PUNCT>,</PUNCT>
+				<W DEP="W1106" FUNC="-FMAINV" ID="W1108" LEMMA="sign" POS="EN">signed</W>
+				<W DEP="W1108" FUNC="ADVL" ID="W1109" LEMMA="by" POS="PREP">by</W>
+				<MARKABLE ANIMACY="T" ARTICLE="I" COMMENT="" HEAD="W1112" ID="112" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W1112" FUNC="DN" ID="W1110" LEMMA="a" POS="DET">a</W>
+					<W DEP="W1112" FUNC="A" ID="W1111" LEMMA="rebel" POS="N">rebel</W>
+					<W DEP="W1109" FUNC="P" ID="W1112" LEMMA="spokeswoman" POS="N">spokeswoman</W>
+					<W DEP="W1112" FUNC="NOM" ID="W1113" LEMMA="in" POS="PREP">in</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1114" ID="113" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location']">
+						<W DEP="W1113" FUNC="P" ID="W1114" LEMMA="Germany" POS="N">Germany</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="none" FUNC="+FMAINV" ID="W1116" LEMMA="accuse" POS="V">accused</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1117" ID="115" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="284" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1116" FUNC="OBJ" ID="W1117" LEMMA="Fujimori" POS="N">Fujimori</W>
+			</MARKABLE>
+			<W DEP="W1117" FUNC="NOM-OF" ID="W1118" LEMMA="of" POS="PREP">of</W>
+			<W DEP="W1118" FUNC="P-FMAINV" ID="W1119" LEMMA="prepare" POS="ING">preparing</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W1123" ID="116" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'substance', 'cognition', 'action', 'event']">
+				<W DEP="W1123" FUNC="DN" ID="W1120" LEMMA="a" POS="DET">a</W>
+				<PUNCT>"_</PUNCT>
+				<W DEP="W1123" FUNC="A" ID="W1122" LEMMA="violent" POS="A">violent</W>
+				<W DEP="W1119" FUNC="OBJ" ID="W1123" LEMMA="solution" POS="N">solution</W>
+				<PUNCT>_"</PUNCT>
+			</MARKABLE>
+			<W DEP="W1116" FUNC="CC" ID="W1125" LEMMA="and" POS="CC">and</W>
+			<W DEP="W1116" FUNC="+FMAINV" ID="W1126" LEMMA="add" POS="V">added</W>
+			<W DEP="W1130" FUNC="CS" ID="W1127" LEMMA="that" POS="CS">that</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1129" ID="117" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'action', 'event', 'cognition']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="285" SRC="4" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1129" FUNC="DN" ID="W1128" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1130" FUNC="SUBJ" ID="W1129" LEMMA="government" POS="N">government</W>
+			</MARKABLE>
+			<W DEP="W1126" FUNC="+FMAINV" ID="W1130" LEMMA="know" POS="V">knew</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1132" ID="118" NUMBER="S" PROPER_NAME="T" SEMANTIC_CLASS="['group']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="286" SRC="20" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1132" FUNC="DN" ID="W1131" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1133" FUNC="SUBJ" ID="W1132" LEMMA="mrta" POS="N">MRTA</W>
+			</MARKABLE>
+			<W DEP="W1135" FUNC="+FAUXV" ID="W1133" LEMMA="would" POS="V">would</W>
+			<W DEP="W1133" FUNC="ADVL" ID="W1134" LEMMA="not" POS="NEG-PART">not</W>
+			<W DEP="W1130" FUNC="-FMAINV" ID="W1135" LEMMA="relinquish" POS="V">relinquish</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1148" ID="120" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'phenomenon', 'cognition', 'procedure', 'action', 'event']">
+				<MARKABLE COMMENT="" ID="122">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="287" SRC="20" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W1137" FUNC="A" ID="W1136" LEMMA="it" POS="PRON">its</W>
+				</MARKABLE>
+				<W DEP="W1135" FUNC="OBJ" ID="W1137" LEMMA="demand" POS="N">demand</W>
+				<W DEP="W1137" FUNC="NOM" ID="W1138" LEMMA="for" POS="PREP">for</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1148" ID="123" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'phenomenon', 'cognition', 'procedure', 'action', 'event']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="288" SRC="96" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+					<W DEP="W1140" FUNC="DN" ID="W1139" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1138" FUNC="P" ID="W1140" LEMMA="release" POS="N">release</W>
+					<W DEP="W1140" FUNC="NOM-OF" ID="W1141" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1148" ID="124" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'phenomenon', 'cognition', 'procedure', 'action', 'event']">
+						<W DEP="W1141" FUNC="P" ID="W1142" LEMMA="comrade" POS="N">comrades</W>
+						<W DEP="W1142" FUNC="NOM" ID="W1143" LEMMA="in" POS="PREP">in</W>
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1148" ID="125" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'phenomenon', 'cognition', 'procedure', 'action', 'event']">
+							<W DEP="W1143" FUNC="P" ID="W1144" LEMMA="jail" POS="N">jails</W>
+							<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1148" ID="127" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'phenomenon', 'cognition', 'procedure', 'action', 'event']">
+								<MARKABLE COMMENT="" ID="128">
+									<COREF CERTAIN="TRUE" COMMENT="" ID="289" SRC="125" TYPE_REF="NP" TYPE_REL="IDENT"/>
+									<W DEP="W1146" FUNC="A" ID="W1145" LEMMA="who" POS="DET">whose</W>
+								</MARKABLE>
+								<PUNCT>"_</PUNCT>
+								<W DEP="W1148" FUNC="A" ID="W1147" LEMMA="inhuman" POS="A">inhuman</W>
+								<W DEP="none" FUNC="APP" ID="W1148" LEMMA="condition" POS="N">conditions</W>
+							</MARKABLE>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W ID="W1149" LEMMA="" POS="OTHER">$...</W>
+		</S>
+		<S ID="S18">
+			<W DEP="none" FUNC="+FMAINV" ID="W1230" LEMMA="be" POS="V">are</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="this should be part of the previous NP but can't mark it." HEAD="W1232" ID="129" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'location']">
+				<W DEP="W1232" FUNC="DN" ID="W1231" LEMMA="a" POS="DET">a</W>
+				<W DEP="W1230" FUNC="SUBJ" ID="W1232" LEMMA="monument" POS="N">monument</W>
+				<W DEP="none" FUNC="NOM" ID="W1233" LEMMA="to" POS="PREP">to</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1234" ID="130" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+					<W DEP="W1233" FUNC="P" ID="W1234" LEMMA="infamy" POS="N">infamy</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+			<PUNCT>_"</PUNCT>
+		</S>
+	</P>
+	<P ID="15">
+		<S ID="S19">
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1249" ID="131" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['communication', 'action', 'event']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="290" SRC="2" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1249" FUNC="DN" ID="W1247" LEMMA="all" POS="DET">All</W>
+				<W DEP="W1249" FUNC="QN" ID="W1248" LEMMA="three" POS="NUM">three</W>
+				<W DEP="W1252" FUNC="SUBJ" ID="W1249" LEMMA="talk" POS="N">talks</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1251" ID="132" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W1251" FUNC="DN" ID="W1250" LEMMA="last" POS="DET">last</W>
+					<W DEP="W1249" FUNC="ADVL" ID="W1251" LEMMA="week" POS="N">week</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W1253" FUNC="+FAUXV" ID="W1252" LEMMA="be" POS="V">were</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1253" LEMMA="hold" POS="EN">held</W>
+			<W DEP="W1253" FUNC="ADVL" ID="W1254" LEMMA="at" POS="PREP">at</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1280" ID="133" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="291" SRC="42" TYPE_REF="NP" TYPE_REL="GENERALISATION"/>
+				<W DEP="W1257" FUNC="DN" ID="W1255" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1257" FUNC="A" ID="W1256" LEMMA="rent" POS="A">rented</W>
+				<W DEP="W1254" FUNC="P" ID="W1257" LEMMA="house" POS="N">house</W>
+				<W DEP="W1257" FUNC="NOM" ID="W1258" LEMMA="across" POS="PREP">across</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1260" ID="134" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'state', 'group']">
+					<W DEP="W1260" FUNC="DN" ID="W1259" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1258" FUNC="P" ID="W1260" LEMMA="street" POS="N">street</W>
+				</MARKABLE>
+				<W DEP="W1253" FUNC="ADVL" ID="W1261" LEMMA="from" POS="PREP">from</W>
+				<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1280" ID="135" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W1264" FUNC="DN" ID="W1262" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1264" FUNC="A" ID="W1263" LEMMA="diplomatic" POS="A">diplomatic</W>
+					<W DEP="W1261" FUNC="P" ID="W1264" LEMMA="compound" POS="N">compound</W>
+					<W DEP="W1269" FUNC="ADVL" ID="W1265" LEMMA="where" POS="ADV">where</W>
+					<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1266" ID="136" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="292" SRC="5" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W1267" FUNC="SUBJ" ID="W1266" LEMMA="rebel" POS="N">rebels</W>
+					</MARKABLE>
+					<W DEP="W1268" FUNC="+FAUXV" ID="W1267" LEMMA="have" POS="V">have</W>
+					<W DEP="W1269" FUNC="-FAUXV" ID="W1268" LEMMA="be" POS="EN">been</W>
+					<W DEP="W1264" FUNC="-FMAINV" ID="W1269" LEMMA="hole" POS="EN">holed</W>
+					<W DEP="W1269" FUNC="ADVL" ID="W1270" LEMMA="up" POS="ADV">up</W>
+					<W DEP="W1269" FUNC="ADVL" ID="W1271" LEMMA="since" POS="PREP">since</W>
+					<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1280" ID="296" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="297" SRC="39" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W1271" FUNC="P" ID="W1272" LEMMA="Dec." POS="ABBR">Dec.</W>
+						<W DEP="W1272" FUNC="NOM" ID="W1273" LEMMA="17" POS="NUM">17</W>
+						<PUNCT>,</PUNCT>
+						<W DEP="none" FUNC="ADVL" ID="W1275" LEMMA="when" POS="ADV">when</W>
+						<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1280" ID="139" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+							<UCOREF CERTAIN="FALSE" COMMENT="can it be coreferential because of &quot;about&quot;???" ID="299" SRC="5" TYPE_REF="NP" TYPE_REL="SYNONYM" UNCERTAIN="ANNOTATOR"/>
+							<W DEP="W1277" FUNC="AD-A" ID="W1276" LEMMA="about" POS="ADV">about</W>
+							<W DEP="W1280" FUNC="QN" ID="W1277" LEMMA="15" POS="NUM">15</W>
+							<W DEP="W1279" FUNC="AD-A" ID="W1278" LEMMA="heavy" POS="ADV">heavily</W>
+							<W DEP="W1280" FUNC="A" ID="W1279" LEMMA="arm" POS="A">armed</W>
+							<W DEP="none" FUNC="SUBJ" ID="W1280" LEMMA="guerrilla" POS="N">guerrillas</W>
+						</MARKABLE>
+						<W DEP="none" FUNC="P-FMAINV" ID="W1281" LEMMA="storm" POS="EN">stormed</W>
+						<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W1283" ID="140" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'event']">
+							<W DEP="W1283" FUNC="DN" ID="W1282" LEMMA="a" POS="DET">a</W>
+							<W DEP="W1281" FUNC="OBJ" ID="W1283" LEMMA="party" POS="N">party</W>
+						</MARKABLE>
+						<W DEP="none" FUNC="CC" ID="W1284" LEMMA="and" POS="CC">and</W>
+						<W DEP="none" FUNC="P-FMAINV" ID="W1285" LEMMA="seize" POS="EN">seized</W>
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1286" ID="141" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+							<W DEP="W1285" FUNC="OBJ" ID="W1286" LEMMA="hundred" POS="N">hundreds</W>
+							<W DEP="W1286" FUNC="NOM-OF" ID="W1287" LEMMA="of" POS="PREP">of</W>
+							<W DEP="W1287" FUNC="P" ID="W1288" LEMMA="hostage" POS="N">hostages</W>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="16">
+		<S ID="S20">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1373" ID="142" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'artifact']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="293" SRC="5" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1373" FUNC="DN" ID="W1372" LEMMA="the" POS="DET">The</W>
+				<W DEP="W1377" FUNC="SUBJ" ID="W1373" LEMMA="band" POS="N">band</W>
+				<W DEP="W1373" FUNC="NOM-OF" ID="W1374" LEMMA="of" POS="PREP">of</W>
+				<W DEP="W1376" FUNC="A" ID="W1375" LEMMA="Cuban-inspired" POS="A">Cuban-inspired</W>
+				<W DEP="W1374" FUNC="P" ID="W1376" LEMMA="rebel" POS="N">rebels</W>
+			</MARKABLE>
+			<W DEP="W1378" FUNC="+FAUXV" ID="W1377" LEMMA="have" POS="V">has</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1378" LEMMA="release" POS="EN">released</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1409" ID="143" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<W DEP="W1378" FUNC="ADVL" ID="W1379" LEMMA="all_but" POS="ADV">all_but</W>
+				<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1409" ID="144" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="295" SRC="8" TYPE_REF="NP" TYPE_REL="SPECIALISATION"/>
+					<W DEP="W1382" FUNC="DN" ID="W1380" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1382" FUNC="QN" ID="W1381" LEMMA="72" POS="NUM">72</W>
+					<W DEP="W1384" FUNC="SUBJ" ID="W1382" LEMMA="captive" POS="N">captives</W>
+					<W DEP="W1378" FUNC="ADVL" ID="W1383" LEMMA="still" POS="ADV">still</W>
+					<W DEP="none" FUNC="+FMAINV" ID="W1384" LEMMA="hold" POS="V">held</W>
+					<PUNCT>,</PUNCT>
+					<W DEP="W1384" FUNC="-FMAINV" ID="W1386" LEMMA="include" POS="ING">including</W>
+					<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1409" ID="153" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1389" ID="145" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+							<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1387" ID="146" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+								<COREF CERTAIN="TRUE" COMMENT="" ID="294" SRC="48" TYPE_REF="NP" TYPE_REL="IDENT"/>
+								<W DEP="W1386" FUNC="OBJ" ID="W1387" LEMMA="Fujimori" POS="N">Fujimori's</W>
+							</MARKABLE>
+							<W DEP="W1389" FUNC="A" ID="W1388" LEMMA="brother" POS="N">brother</W>
+							<W DEP="none" FUNC="SUBJ" ID="W1389" LEMMA="Pedro" POS="N">Pedro</W>
+						</MARKABLE>
+						<PUNCT>,</PUNCT>
+						<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1394" ID="147" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person', 'action', 'event']">
+							<W DEP="W1394" FUNC="QN" ID="W1391" LEMMA="two" POS="NUM">two</W>
+							<W DEP="W1393" FUNC="A" ID="W1392" LEMMA="Peruvian" POS="A">Peruvian</W>
+							<W DEP="W1394" FUNC="A" ID="W1393" LEMMA="cabinet" POS="N">cabinet</W>
+							<W DEP="W1389" FUNC="APP" ID="W1394" LEMMA="minister" POS="N">ministers</W>
+						</MARKABLE>
+						<PUNCT>,</PUNCT>
+						<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W1397" ID="148" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+							<W DEP="W1397" FUNC="DN" ID="W1396" LEMMA="the" POS="DET">the</W>
+							<W DEP="none" FUNC="SUBJ" ID="W1397" LEMMA="envoy" POS="N">envoys</W>
+							<W DEP="W1397" FUNC="NOM-OF" ID="W1398" LEMMA="of" POS="PREP">of</W>
+							<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1399" ID="151" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'artifact']">
+								<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1399" ID="149" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'artifact']">
+									<COREF CERTAIN="TRUE" COMMENT="geographical" ID="300" SRC="63" TYPE_REF="NP" TYPE_REL="IDENT"/>
+									<W DEP="W1398" FUNC="P" ID="W1399" LEMMA="Japan" POS="N">Japan</W>
+								</MARKABLE>
+								<W DEP="W1399" FUNC="CC" ID="W1400" LEMMA="and" POS="CC">and</W>
+								<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1401" ID="150" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'action', 'event']">
+									<W DEP="W1399" FUNC="P" ID="W1401" LEMMA="Bolivia" POS="N">Bolivia</W>
+								</MARKABLE>
+							</MARKABLE>
+						</MARKABLE>
+						<W DEP="none" FUNC="CC" ID="W1402" LEMMA="and" POS="CC">and</W>
+						<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1409" ID="152" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+							<W DEP="W1404" FUNC="AD-A" ID="W1403" LEMMA="about" POS="ADV">about</W>
+							<W DEP="W1405" FUNC="QN" ID="W1404" LEMMA="two" POS="NUM">two</W>
+							<W DEP="none" FUNC="SUBJ" ID="W1405" LEMMA="dozen" POS="N">dozen</W>
+							<W DEP="W1407" FUNC="A" ID="W1406" LEMMA="Japanese" POS="A">Japanese</W>
+							<W DEP="none" FUNC="SUBJ" ID="W1407" LEMMA="businessman" POS="N">businessmen</W>
+							<W DEP="none" FUNC="CC" ID="W1408" LEMMA="and" POS="CC">and</W>
+							<W DEP="none" FUNC="OBJ" ID="W1409" LEMMA="diplomat" POS="N">diplomats</W>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="17">
+		<S ID="S21">
+			<W DEP="W1497" FUNC="ADVL" ID="W1481" LEMMA="after" POS="PREP">After</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1483" ID="154" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<W DEP="W1483" FUNC="QN" ID="W1482" LEMMA="two" POS="NUM">two</W>
+				<W DEP="W1481" FUNC="P" ID="W1483" LEMMA="month" POS="N">months</W>
+				<W DEP="W1483" FUNC="NOM" ID="W1484" LEMMA="in" POS="PREP">in</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1485" ID="156" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+					<W DEP="W1484" FUNC="P" ID="W1485" LEMMA="captivity" POS="N">captivity</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1487" ID="157" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['cognition', 'state', 'feeling']">
+				<W DEP="W1496" FUNC="SUBJ" ID="W1487" LEMMA="worry" POS="N">worries</W>
+				<W DEP="W1487" FUNC="NOM" ID="W1488" LEMMA="about" POS="PREP">about</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1490" ID="158" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['event', 'state', 'group', 'cognition', 'action']">
+					<W DEP="W1490" FUNC="DN" ID="W1489" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1488" FUNC="P" ID="W1490" LEMMA="strain" POS="N">strain</W>
+					<W DEP="W1490" FUNC="NOM" ID="W1491" LEMMA="on" POS="PREP">on</W>
+					<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W1495" ID="159" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="301" SRC="8" TYPE_REF="NP" TYPE_REL="SPECIALISATION"/>
+						<W DEP="W1495" FUNC="DN" ID="W1492" LEMMA="the" POS="DET">the</W>
+						<W DEP="W1494" FUNC="AD-A" ID="W1493" LEMMA="main" POS="ADV">mainly</W>
+						<W DEP="W1495" FUNC="A" ID="W1494" LEMMA="middle-aged" POS="A">middle-aged</W>
+						<W DEP="W1491" FUNC="P" ID="W1495" LEMMA="hostage" POS="N">hostages</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W1497" FUNC="+FAUXV" ID="W1496" LEMMA="have" POS="V">have</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1497" LEMMA="grow" POS="EN">grown</W>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="18">
+		<S ID="S22">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1535" ID="160" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'action', 'event']">
+				<W DEP="W1535" FUNC="DN" ID="W1531" LEMMA="the" POS="DET">The</W>
+				<W DEP="W1533" FUNC="A" ID="W1532" LEMMA="international" POS="A">International</W>
+				<W DEP="W1534" FUNC="A" ID="W1533" LEMMA="human" POS="A">Human</W>
+				<W DEP="W1535" FUNC="A" ID="W1534" LEMMA="right" POS="N">Rights</W>
+				<W DEP="none" FUNC="SUBJ" ID="W1535" LEMMA="federation" POS="N">Federation</W>
+			</MARKABLE>
+			<W DEP="W1535" FUNC="-FMAINV" ID="W1536" LEMMA="call" POS="EN">called</W>
+			<W DEP="W1536" FUNC="ADVL" ID="W1537" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1539" ID="161" NUMBER="S" PROPER_NAME="T" SEMANTIC_CLASS="['group']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="302" SRC="20" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1540" FUNC="DN" ID="W1538" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1540" FUNC="A" ID="W1539" LEMMA="mrta" POS="N">MRTA</W>
+			</MARKABLE>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1540" ID="162" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="303" SRC="22" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1537" FUNC="P" ID="W1540" LEMMA="Saturday" POS="N">Saturday</W>
+			</MARKABLE>
+			<W DEP="W1542" FUNC="INFMARK" ID="W1541" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W1540" FUNC="-FMAINV" ID="W1542" LEMMA="follow" POS="V">follow</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W1546" ID="163" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<W DEP="W1546" FUNC="DN" ID="W1543" LEMMA="a" POS="DET">a</W>
+				<W DEP="W1545" FUNC="A" ID="W1544" LEMMA="red" POS="A">Red</W>
+				<W DEP="W1546" FUNC="A" ID="W1545" LEMMA="cross" POS="N">Cross</W>
+				<W DEP="W1542" FUNC="OBJ" ID="W1546" LEMMA="recommendation" POS="N">recommendation</W>
+			</MARKABLE>
+			<W DEP="W1542" FUNC="CC" ID="W1547" LEMMA="and" POS="CC">and</W>
+			<W DEP="W1542" FUNC="-FMAINV" ID="W1548" LEMMA="release" POS="V">release</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1550" ID="164" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<W DEP="W1550" FUNC="DN" ID="W1549" LEMMA="any" POS="DET">any</W>
+				<W DEP="W1548" FUNC="OBJ" ID="W1550" LEMMA="hostage" POS="N">hostage</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1552" ID="165" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+					<MARKABLE COMMENT="" ID="166">
+						<W DEP="W1552" FUNC="DN" ID="W1551" LEMMA="who" POS="DET">whose</W>
+					</MARKABLE>
+					<W DEP="W1553" FUNC="SUBJ" ID="W1552" LEMMA="health" POS="N">health</W>
+				</MARKABLE>
+				<W DEP="W1550" FUNC="+FMAINV" ID="W1553" LEMMA="show" POS="V">shows</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1554" ID="167" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'location', 'cognition', 'relation', 'event']">
+					<W DEP="W1553" FUNC="OBJ" ID="W1554" LEMMA="sign" POS="N">signs</W>
+					<W DEP="W1554" FUNC="NOM-OF" ID="W1555" LEMMA="of" POS="PREP">of</W>
+					<W DEP="W1555" FUNC="P-FMAINV" ID="W1556" LEMMA="deteriorate" POS="ING">deteriorating</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="19">
+		<S ID="S23">
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1613" ID="168" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['person', 'action', 'event']">
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1611" ID="170" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="304" SRC="160" TYPE_REF="NP" TYPE_REL="GENERALISATION"/>
+					<W DEP="W1613" FUNC="DN" ID="W1610" LEMMA="the" POS="DET">The</W>
+					<W DEP="W1612" FUNC="A" ID="W1611" LEMMA="group" POS="N">group's</W>
+				</MARKABLE>
+				<W DEP="W1613" FUNC="A" ID="W1612" LEMMA="vice" POS="N">vice</W>
+				<W DEP="W1618" FUNC="SUBJ" ID="W1613" LEMMA="president" POS="N">president</W>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1616" ID="169" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="305" SRC="168" TYPE_REF="NP" TYPE_REL="SPECIALISATION"/>
+					<W DEP="W1616" FUNC="A" ID="W1615" LEMMA="Francisco" POS="N">Francisco</W>
+					<W DEP="W1613" FUNC="APP" ID="W1616" LEMMA="soberon" POS="N">Soberon</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="none" FUNC="+FMAINV" ID="W1618" LEMMA="slam" POS="V">slammed</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1620" ID="171" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<W DEP="W1620" FUNC="DN" ID="W1619" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1618" FUNC="OBJ" ID="W1620" LEMMA="hostage-taking" POS="N">hostage-taking</W>
+				<PUNCT>"_</PUNCT>
+				<W DEP="W1623" FUNC="SUBJ" ID="W1622" LEMMA="which" POS="PRON">which</W>
+				<W DEP="W1620" FUNC="+FMAINV" ID="W1623" LEMMA="put" POS="V">puts</W>
+				<W DEP="W1623" FUNC="ADVL" ID="W1624" LEMMA="at" POS="PREP">at</W>
+				<W DEP="W1624" FUNC="P" ID="W1625" LEMMA="risk" POS="N">risk</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1627" ID="172" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'cognition', 'time', 'measure', 'phenomenon', 'motivation']">
+					<W DEP="W1627" FUNC="DN" ID="W1626" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1623" FUNC="OBJ" ID="W1627" LEMMA="life" POS="N">lives</W>
+					<W DEP="W1627" FUNC="NOM-OF" ID="W1628" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE COMMENT="" ID="173">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="306" SRC="8" TYPE_REF="NP" TYPE_REL="OTHER"/>
+						<W DEP="W1628" FUNC="P" ID="W1629" LEMMA="that" POS="PRON">those</W>
+						<W DEP="W1631" FUNC="SUBJ" ID="W1630" LEMMA="who" POS="PRON">who</W>
+						<W DEP="W1632" FUNC="+FAUXV" ID="W1631" LEMMA="be" POS="V">are</W>
+						<W DEP="W1634" FUNC="-FAUXV" ID="W1632" LEMMA="be" POS="ING">being</W>
+						<W DEP="W1634" FUNC="ADVL" ID="W1633" LEMMA="unjust" POS="ADV">unjustly</W>
+						<W DEP="W1629" FUNC="-FMAINV" ID="W1634" LEMMA="hold" POS="EN">held</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+			<PUNCT>_"</PUNCT>
+		</S>
+	</P>
+	<P ID="20">
+		<S ID="S24">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1683" ID="174" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'state']">
+				<W DEP="W1683" FUNC="DN" ID="W1681" LEMMA="the" POS="DET">The</W>
+				<W DEP="W1683" FUNC="A" ID="W1682" LEMMA="red" POS="A">Red</W>
+				<W DEP="W1684" FUNC="SUBJ" ID="W1683" LEMMA="cross" POS="N">Cross</W>
+			</MARKABLE>
+			<W DEP="W1685" FUNC="+FAUXV" ID="W1684" LEMMA="be" POS="V">is</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1685" LEMMA="treat" POS="ING">treating</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1687" ID="175" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<W DEP="W1687" FUNC="DN" ID="W1686" LEMMA="many" POS="DET">many</W>
+				<W DEP="W1685" FUNC="OBJ" ID="W1687" LEMMA="hostage" POS="N">hostages</W>
+			</MARKABLE>
+			<W DEP="W1687" FUNC="NOM" ID="W1688" LEMMA="for" POS="PREP">for</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1689" ID="176" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1689" ID="177" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state']">
+					<W DEP="W1688" FUNC="P" ID="W1689" LEMMA="hypertension" POS="N">hypertension</W>
+				</MARKABLE>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1692" ID="178" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'cognition']">
+					<W DEP="W1692" FUNC="A" ID="W1691" LEMMA="digestive" POS="A">digestive</W>
+					<W DEP="W1689" FUNC="P" ID="W1692" LEMMA="problem" POS="N">problems</W>
+				</MARKABLE>
+				<W DEP="W1692" FUNC="CC" ID="W1693" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1694" ID="179" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'feeling', 'time', 'measure', 'phenomenon', 'relation', 'action', 'event']">
+					<W DEP="W1692" FUNC="P" ID="W1694" LEMMA="depression" POS="N">depression</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+		<S ID="S25">
+			<MARKABLE COMMENT="" ID="180">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="307" SRC="8" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1723" FUNC="SUBJ" ID="W1722" LEMMA="they" POS="PRON">They</W>
+			</MARKABLE>
+			<W DEP="W1724" FUNC="+FAUXV" ID="W1723" LEMMA="have" POS="V">have</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1724" LEMMA="spend" POS="EN">spent</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1732" ID="181" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['measure', 'time', 'state']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1725" ID="182" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+					<W DEP="W1724" FUNC="ADVL" ID="W1725" LEMMA="Christmas" POS="N">Christmas</W>
+				</MARKABLE>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1728" ID="183" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure', 'group']">
+					<W DEP="W1728" FUNC="A" ID="W1727" LEMMA="new" POS="A">New</W>
+					<W DEP="none" FUNC="SUBJ" ID="W1728" LEMMA="year" POS="N">Year</W>
+				</MARKABLE>
+				<W DEP="none" FUNC="CC" ID="W1729" LEMMA="and" POS="CC">and</W>
+				<W DEP="none" FUNC="ADVL" ID="W1730" LEMMA="now" POS="ADV">now</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1732" ID="184" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['measure', 'time', 'state']">
+					<W DEP="W1732" FUNC="A" ID="W1731" LEMMA="valentine" POS="N">Valentine's</W>
+					<W DEP="none" FUNC="SUBJ" ID="W1732" LEMMA="day" POS="N">Day</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W1732" FUNC="ADVL" ID="W1733" LEMMA="away" POS="ADV">away</W>
+			<W DEP="none" FUNC="ADVL" ID="W1734" LEMMA="from" POS="PREP">from</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1736" ID="186" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group']">
+				<MARKABLE COMMENT="" ID="308">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="309" SRC="8" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W1736" FUNC="A" ID="W1735" LEMMA="they" POS="PRON">their</W>
+				</MARKABLE>
+				<W DEP="W1734" FUNC="P" ID="W1736" LEMMA="family" POS="N">families</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="21">
+		<S ID="S26">
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1768" ID="187" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1766" ID="188" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W1768" FUNC="SUBJ" ID="W1766" LEMMA="wife" POS="N">Wives</W>
+				</MARKABLE>
+				<W DEP="W1768" FUNC="CC" ID="W1767" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1768" ID="189" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W1769" FUNC="SUBJ" ID="W1768" LEMMA="girlfriend" POS="N">girlfriends</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W1769" LEMMA="give" POS="V">gave</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1772" ID="190" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'state']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="310" SRC="174" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1773" FUNC="DN" ID="W1770" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1772" FUNC="A" ID="W1771" LEMMA="red" POS="A">Red</W>
+				<W DEP="W1773" FUNC="A" ID="W1772" LEMMA="cross" POS="N">Cross</W>
+			</MARKABLE>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1773" ID="192" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'measure', 'state', 'plant', 'action', 'event']">
+				<W DEP="W1769" FUNC="OBJ" ID="W1773" LEMMA="box" POS="N">boxes</W>
+				<W DEP="W1773" FUNC="NOM-OF" ID="W1774" LEMMA="of" POS="PREP">of</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1775" ID="193" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'food', 'substance']">
+					<W DEP="W1774" FUNC="P" ID="W1775" LEMMA="chocolate" POS="N">chocolates</W>
+				</MARKABLE>
+				<W DEP="W1775" FUNC="NOM" ID="W1776" LEMMA="for" POS="PREP">for</W>
+				<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1778" ID="194" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'person', 'animal', 'artifact']">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="311" SRC="8" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W1778" FUNC="DN" ID="W1777" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1776" FUNC="P" ID="W1778" LEMMA="man" POS="N">men</W>
+				</MARKABLE>
+			</MARKABLE>
+			<W DEP="W1769" FUNC="ADVL" ID="W1779" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1780" ID="195" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="312" SRC="275" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1779" FUNC="P" ID="W1780" LEMMA="Friday" POS="N">Friday</W>
+			</MARKABLE>
+			<W DEP="W1769" FUNC="CC" ID="W1781" LEMMA="and" POS="CC">and</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1784" ID="196" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'measure']">
+				<W DEP="W1784" FUNC="QN" ID="W1782" LEMMA="72" POS="NUM">72</W>
+				<W DEP="W1784" FUNC="A" ID="W1783" LEMMA="Peruvian" POS="A">Peruvian</W>
+				<W DEP="W1785" FUNC="SUBJ" ID="W1784" LEMMA="couple" POS="N">couples</W>
+			</MARKABLE>
+			<W DEP="W1786" FUNC="+FAUXV" ID="W1785" LEMMA="be" POS="V">were</W>
+			<W DEP="W1769" FUNC="-FMAINV" ID="W1786" LEMMA="marry" POS="EN">married</W>
+			<W DEP="W1786" FUNC="ADVL" ID="W1787" LEMMA="at" POS="PREP">at</W>
+			<MARKABLE ANIMACY="F" ARTICLE="I" COMMENT="" HEAD="W1789" ID="197" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['measure', 'group', 'action', 'event']">
+				<W DEP="none" FUNC="DN" ID="W1788" LEMMA="a" POS="DET">a</W>
+				<W DEP="none" FUNC="A" ID="W1789" LEMMA="mass" POS="N">mass</W>
+				<W DEP="none" FUNC="P-FMAINV" ID="W1790" LEMMA="wed" POS="ING">wedding</W>
+			</MARKABLE>
+			<W DEP="W1792" FUNC="INFMARK" ID="W1791" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1792" LEMMA="show" POS="V">show</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1793" ID="198" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<W DEP="W1792" FUNC="OBJ" ID="W1793" LEMMA="solidarity" POS="N">solidarity</W>
+				<W DEP="W1793" FUNC="ADVL" ID="W1794" LEMMA="with" POS="PREP">with</W>
+				<MARKABLE COMMENT="" ID="199">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="313" SRC="8" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W1794" FUNC="P" ID="W1795" LEMMA="they" POS="PRON">them</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="22">
+		<S ID="S27">
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1859" ID="200" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'state']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="314" SRC="174" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1859" FUNC="DN" ID="W1857" LEMMA="the" POS="DET">The</W>
+				<W DEP="W1859" FUNC="A" ID="W1858" LEMMA="red" POS="A">Red</W>
+				<W DEP="W1860" FUNC="SUBJ" ID="W1859" LEMMA="cross" POS="N">Cross</W>
+			</MARKABLE>
+			<W DEP="none" FUNC="+FMAINV" ID="W1860" LEMMA="give" POS="V">gave</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1861" ID="201" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['cognition', 'relation', 'communication', 'action', 'event', 'group']">
+				<W DEP="W1860" FUNC="OBJ" ID="W1861" LEMMA="detail" POS="N">details</W>
+			</MARKABLE>
+			<W DEP="W1860" FUNC="ADVL" ID="W1862" LEMMA="on" POS="PREP">on</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1863" ID="202" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['time', 'measure']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="315" SRC="22" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1862" FUNC="P" ID="W1863" LEMMA="Saturday" POS="N">Saturday</W>
+			</MARKABLE>
+			<W DEP="W1863" FUNC="NOM-OF" ID="W1864" LEMMA="of" POS="PREP">of</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1868" ID="203" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['state', 'action', 'event', 'procedure', 'cognition']">
+				<MARKABLE COMMENT="" ID="204">
+					<COREF CERTAIN="TRUE" COMMENT="" ID="316" SRC="174" TYPE_REF="NP" TYPE_REL="IDENT"/>
+					<W DEP="W1866" FUNC="A" ID="W1865" LEMMA="it" POS="PRON">its</W>
+				</MARKABLE>
+				<W DEP="W1867" FUNC="A" ID="W1866" LEMMA="mammoth" POS="A">mammoth</W>
+				<W DEP="W1868" FUNC="A" ID="W1867" LEMMA="aid" POS="N">aid</W>
+				<W DEP="W1864" FUNC="P" ID="W1868" LEMMA="operation" POS="N">operation</W>
+				<W DEP="W1860" FUNC="ADVL" ID="W1869" LEMMA="to" POS="PREP">to</W>
+				<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="unsure if this is all the hostgaes or just the 72 remaining." HEAD="W1871" ID="205" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+					<W DEP="W1871" FUNC="DN" ID="W1870" LEMMA="the" POS="DET">the</W>
+					<W DEP="W1869" FUNC="P" ID="W1871" LEMMA="hostage" POS="N">hostages</W>
+					<W DEP="W1871" FUNC="ADVL" ID="W1872" LEMMA="inside" POS="PREP">inside</W>
+					<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1874" ID="206" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['location', 'artifact', 'action', 'event']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="317" SRC="30" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+						<W DEP="W1874" FUNC="DN" ID="W1873" LEMMA="the" POS="DET">the</W>
+						<W DEP="W1872" FUNC="P" ID="W1874" LEMMA="residence" POS="N">residence</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+		<S ID="S28">
+			<W DEP="W1915" FUNC="ADVL" ID="W1912" LEMMA="so_far" POS="ADV">So_far</W>
+			<MARKABLE COMMENT="" ID="207">
+				<W DEP="W1914" FUNC="SUBJ" ID="W1913" LEMMA="it" POS="PRON">it</W>
+			</MARKABLE>
+			<W DEP="W1915" FUNC="+FAUXV" ID="W1914" LEMMA="have" POS="V">has</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1915" LEMMA="enable" POS="EN">enabled</W>
+			<MARKABLE ANIMACY="T" ARTICLE="D" COMMENT="" HEAD="W1917" ID="208" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person', 'animal']">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="318" SRC="205" TYPE_REF="NP" TYPE_REL="SYNONYM"/>
+				<W DEP="W1917" FUNC="DN" ID="W1916" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1915" FUNC="OBJ" ID="W1917" LEMMA="captive" POS="N">captives</W>
+			</MARKABLE>
+			<W DEP="W1919" FUNC="INFMARK" ID="W1918" LEMMA="to" POS="INFMARK&gt;">to</W>
+			<W DEP="W1913" FUNC="-FMAINV" ID="W1919" LEMMA="send" POS="V">send</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1921" ID="209" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="[]">
+				<W DEP="W1921" FUNC="QN" ID="W1920" LEMMA="2,238" POS="NUM">2,238</W>
+				<W DEP="W1919" FUNC="OBJ" ID="W1921" LEMMA="message" POS="N">messages</W>
+				<W DEP="W1919" FUNC="ADVL" ID="W1922" LEMMA="to" POS="PREP">to</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1924" ID="210" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group']">
+					<MARKABLE COMMENT="" ID="211">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="319" SRC="205" TYPE_REF="NP" TYPE_REL="IDENT"/>
+						<W DEP="W1924" FUNC="A" ID="W1923" LEMMA="they" POS="PRON">their</W>
+					</MARKABLE>
+					<W DEP="W1922" FUNC="P" ID="W1924" LEMMA="family" POS="N">families</W>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>,</PUNCT>
+			<W DEP="W1929" FUNC="ADVL" ID="W1926" LEMMA="while" POS="ADV">while</W>
+			<MARKABLE ANIMACY="T" ARTICLE="N" COMMENT="" HEAD="W1927" ID="212" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['person']">
+				<W DEP="W1928" FUNC="SUBJ" ID="W1927" LEMMA="relative" POS="N">relatives</W>
+			</MARKABLE>
+			<W DEP="W1929" FUNC="+FAUXV" ID="W1928" LEMMA="have" POS="V">had</W>
+			<W DEP="W1919" FUNC="-FMAINV" ID="W1929" LEMMA="send" POS="EN">sent</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1931" ID="213" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact']">
+				<W DEP="W1931" FUNC="QN" ID="W1930" LEMMA="2,583" POS="NUM">2,583</W>
+				<W DEP="W1929" FUNC="OBJ" ID="W1931" LEMMA="missive" POS="N">missives</W>
+			</MARKABLE>
+			<W DEP="W1929" FUNC="ADVL" ID="W1932" LEMMA="into" POS="PREP">into</W>
+			<MARKABLE ANIMACY="F" ARTICLE="D" COMMENT="" HEAD="W1934" ID="214" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['cognition', 'relation', 'substance', 'artifact']">
+				<W DEP="W1934" FUNC="DN" ID="W1933" LEMMA="the" POS="DET">the</W>
+				<W DEP="W1932" FUNC="P" ID="W1934" LEMMA="compound" POS="N">compound</W>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="23">
+		<S ID="S29">
+			<MARKABLE COMMENT="" ID="215">
+				<COREF CERTAIN="TRUE" COMMENT="" ID="320" SRC="174" TYPE_REF="NP" TYPE_REL="IDENT"/>
+				<W DEP="W1982" FUNC="SUBJ" ID="W1980" LEMMA="it" POS="PRON">It</W>
+			</MARKABLE>
+			<W DEP="W1983" FUNC="ADVL" ID="W1981" LEMMA="also" POS="ADV">also</W>
+			<W DEP="W1983" FUNC="+FAUXV" ID="W1982" LEMMA="have" POS="V">has</W>
+			<W DEP="none" FUNC="-FMAINV" ID="W1983" LEMMA="deliver" POS="EN">delivered</W>
+			<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2012" ID="216" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1985" ID="217" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['group', 'artifact']">
+					<W DEP="W1985" FUNC="QN" ID="W1984" LEMMA="1,201" POS="NUM">1,201</W>
+					<W DEP="W1983" FUNC="OBJ" ID="W1985" LEMMA="package" POS="N">packages</W>
+					<W DEP="W1985" FUNC="NOM-OF" ID="W1986" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1987" ID="218" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['artifact']">
+						<W DEP="W1986" FUNC="P" ID="W1987" LEMMA="clothe" POS="N">clothing</W>
+					</MARKABLE>
+				</MARKABLE>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1995" ID="219" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'food', 'measure', 'action', 'event']">
+					<W DEP="W1990" FUNC="QN" ID="W1989" LEMMA="12,914" POS="NUM">12,914</W>
+					<W DEP="none" FUNC="OBJ" ID="W1990" LEMMA="meal" POS="N">meals</W>
+					<W ID="W1991" LEMMA="" POS="OTHER">$--</W>
+					<W DEP="none" FUNC="P-FMAINV" ID="W1992" LEMMA="include" POS="ING">including</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1995" ID="220" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'food', 'measure', 'action', 'event']">
+						<W DEP="W1995" FUNC="QN" ID="W1993" LEMMA="4,651" POS="NUM">4,651</W>
+						<W DEP="W1995" FUNC="A" ID="W1994" LEMMA="Japanese" POS="A">Japanese</W>
+						<W DEP="none" FUNC="NH" ID="W1995" LEMMA="dish" POS="N">dishes</W>
+					</MARKABLE>
+					<W ID="W1996" LEMMA="paren:&gt;12" POS="OTHER">$--</W>
+				</MARKABLE>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1998" ID="221" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W1998" ID="321" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+						<W DEP="W1998" FUNC="QN" ID="W1997" LEMMA="3,454" POS="NUM">3,454</W>
+						<W DEP="none" FUNC="SUBJ" ID="W1998" LEMMA="litre" POS="N">litres</W>
+					</MARKABLE>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2001" ID="222" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="323" SRC="321" TYPE_REF="BRACKETED_TEXT" TYPE_REL="SYNONYM"/>
+						<PUNCT>(</PUNCT>
+						<W DEP="W2001" FUNC="QN" ID="W2000" LEMMA="912" POS="NUM">912</W>
+						<W DEP="W1998" FUNC="APP" ID="W2001" LEMMA="gallon" POS="N">gallons</W>
+						<PUNCT>)</PUNCT>
+					</MARKABLE>
+					<W DEP="W2001" FUNC="NOM-OF" ID="W2003" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2005" ID="223" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'substance', 'artifact', 'food']">
+						<W DEP="W2005" FUNC="A" ID="W2004" LEMMA="hot" POS="A">hot</W>
+						<W DEP="W2003" FUNC="P" ID="W2005" LEMMA="water" POS="N">water</W>
+					</MARKABLE>
+					<W DEP="W2005" FUNC="NOM" ID="W2006" LEMMA="for" POS="PREP">for</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2007" ID="224" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'food', 'substance', 'plant', 'group']">
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2007" ID="225" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'food', 'substance', 'plant', 'group']">
+							<W DEP="W2006" FUNC="P" ID="W2007" LEMMA="tea" POS="N">tea</W>
+						</MARKABLE>
+						<W DEP="W2007" FUNC="CC" ID="W2008" LEMMA="and" POS="CC">and</W>
+						<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2009" ID="226" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'food', 'substance', 'plant']">
+							<W DEP="W2007" FUNC="P" ID="W2009" LEMMA="coffee" POS="N">coffee</W>
+						</MARKABLE>
+					</MARKABLE>
+				</MARKABLE>
+				<PUNCT>,</PUNCT>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2012" ID="227" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2012" ID="322" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+						<W DEP="W2012" FUNC="QN" ID="W2011" LEMMA="16,180" POS="NUM">16,180</W>
+						<W DEP="none" FUNC="SUBJ" ID="W2012" LEMMA="litre" POS="N">litres</W>
+					</MARKABLE>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2015" ID="228" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['measure']">
+						<COREF CERTAIN="TRUE" COMMENT="" ID="324" SRC="322" TYPE_REF="BRACKETED_TEXT" TYPE_REL="SYNONYM"/>
+						<PUNCT>(</PUNCT>
+						<W DEP="W2015" FUNC="QN" ID="W2014" LEMMA="4,274" POS="NUM">4,274</W>
+						<W DEP="W2012" FUNC="APP" ID="W2015" LEMMA="gallon" POS="N">gallons</W>
+						<PUNCT>)</PUNCT>
+					</MARKABLE>
+					<W DEP="W2015" FUNC="NOM-OF" ID="W2017" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2019" ID="229" NUMBER="S" PROPER_NAME="F" SEMANTIC_CLASS="['relation', 'substance', 'artifact', 'food']">
+						<W DEP="W2019" FUNC="A" ID="W2018" LEMMA="drink" POS="N">drinking</W>
+						<W DEP="W2017" FUNC="P" ID="W2019" LEMMA="water" POS="N">water</W>
+					</MARKABLE>
+				</MARKABLE>
+				<W DEP="W2019" FUNC="CC" ID="W2020" LEMMA="and" POS="CC">and</W>
+				<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2022" ID="230" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact']">
+					<W DEP="W2022" FUNC="QN" ID="W2021" LEMMA="509" POS="NUM">509</W>
+					<W DEP="W2019" FUNC="P" ID="W2022" LEMMA="copy" POS="N">copies</W>
+					<W DEP="W2022" FUNC="NOM-OF" ID="W2023" LEMMA="of" POS="PREP">of</W>
+					<MARKABLE ANIMACY="F" ARTICLE="N" COMMENT="" HEAD="W2025" ID="231" NUMBER="P" PROPER_NAME="F" SEMANTIC_CLASS="['artifact', 'group', 'relation', 'substance']">
+						<W DEP="W2025" FUNC="A" ID="W2024" LEMMA="sports" POS="N">sports</W>
+						<W DEP="W2023" FUNC="P" ID="W2025" LEMMA="newspaper" POS="N">newspapers</W>
+					</MARKABLE>
+				</MARKABLE>
+			</MARKABLE>
+			<PUNCT>.</PUNCT>
+		</S>
+	</P>
+	<P ID="24"/>
+</DOCUMENT>
