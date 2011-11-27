@@ -46,7 +46,7 @@ def main():
             markables.remove(m_dict)
             clusters.pop(m_dict)
     
-    testWhyNot = ["12","9"]
+    testWhyNot = ["10","1"]
     
     scanMarkables(testWhyNot)
     
@@ -64,9 +64,6 @@ def main():
     print '\nNUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOClusters())
     
     #print '\nCHAINS FOUND BEFORE: \n',chains('COREF')
-    
-    print markableWordsFromId("12")
-    print markableWordsFromId("9")
     
     
     fillOutputXML()
@@ -101,10 +98,13 @@ def scanMarkables(testWhyNot):
             
             
             # useful to debug single coreferences buggy instances
-            if np_j == markableFromId("9") and np_i == markableFromId("12"):
+            if np_j == markableFromId(testWhyNot[1]) and np_i == markableFromId(testWhyNot[0]):
                 debug_single_coref = True
                 print '\n################### DEBUG SESSION STARTS ###################\n'
             else: debug_single_coref = False
+            
+            if debug_single_coref:
+                print "(?) Why is ", markableWordsFromId(testWhyNot[0]) ,"coreferring to ",markableWordsFromId(testWhyNot[1]),"\n"
             
             dis = distance(markables_dict[np_i], markables_dict[np_j],debug_single_coref)
             if (debug_single_coref): print '*** distance(id',markables_dict[np_i]["id"],', id',markables_dict[np_j]["id"],') = ',dis
@@ -251,7 +251,7 @@ def distance(m_x,m_y,verbose):
                     'animacy'           : Decimal(infinity) }
 
     if (verbose): print 'starting distance:',d
-    d = d + weights['words_match'] * lemmasMatch(m_x, m_y)
+    d = d + weights['words_match'] * wMatch(m_x, m_y)
     if (verbose): print 'after lemma match:',d
     d = d + weights['head_match'] * headMatch(m_x, m_y)
     if (verbose): print 'after head match:',d
@@ -278,9 +278,9 @@ def numberMatch(m_x, m_y):
 
 def animacyMatch(m_x, m_y):
     if m_x["animacy"] != m_y["animacy"]:
-        return Decimal(0)
-    else: 
         return Decimal(1)
+    else: 
+        return Decimal(0)
 
 
 
@@ -338,14 +338,14 @@ def semClassMatch(m_x,m_y):
     
     for s_c in sem_class_x:
         if s_c in sem_class_y:
-            return 1
+            return 0
         
     for s_c in sem_class_y:
         if s_c in sem_class_x:
-            return 1
+            return 0
     
     # else, intersection is empty
-    return 0
+    return 1
 
 def listFromSemClassStr(s):
     # string ['relation', 'substance', 'artifact', 'food'] --> list 
@@ -369,7 +369,7 @@ def lemmasMatch(m_x,m_y):
     
     getcontext().prec = 7
     
-    if (len(m_x["lemmas"]) > len(m_y["lemmas"])):
+    if (len(m_x["w"]) > len(m_y["lemmas"])):
         
         for lemma in m_x["lemmas"]:
             if lemma not in m_y["lemmas"]:
@@ -389,7 +389,35 @@ def lemmasMatch(m_x,m_y):
 
     return lemmas_match_ratio 
     
+# input = two markables dictionaries
+# returns len(different_words) / len(longest_markable)
+def wMatch(m_x,m_y):
     
+    ws_match_ratio = 0
+    diff_w = 0
+    
+    getcontext().prec = 7
+    
+    if (len(m_x["words"]) > len(m_y["words"])):
+        
+        for w in m_x["words"]:
+            if w not in m_y["words"]:
+                diff_w = diff_w + 1
+                
+        ws_match_ratio = Decimal(diff_w) / Decimal(len(m_x["words"]))
+        return ws_match_ratio 
+    
+    else:
+        
+        for w in m_y["words"]:
+            if w not in m_x["words"]:
+                diff_w = diff_w + 1
+                
+        ws_match_ratio = Decimal(diff_w) / Decimal(len(m_y["words"]))
+        return ws_match_ratio 
+
+    return ws_match_ratio 
+        
     
 #########################
 # XML support functions 
@@ -529,15 +557,17 @@ def fillOutputXML():
 # compares the number of new coreferences which are coincident with the old ones, 
 # and retrieve them
 def countSameCorefs():
+    #xmldoc_local = xml.dom.minidom.parse('/home/jacopo/Desktop/us_coref_oscar.xml')
     xmldoc_local = xml.dom.minidom.parse(output_folder+'us_coref_'+filename)
     coincident_corefs = 0
     c_c = []
     for m in xmldoc_local.getElementsByTagName("COREF"):
         if m.getAttribute("TYPE_REL") == 'IDENT':
-            if (m.parentNode.localName == 'COREF_US'): # or previousSibling?
-                if m.getAttribute("SRC") == m.parentNode.getAttribute("SRC"):
+            if (m.parentNode.childNodes[1].tagName == 'COREF_US'): # or previousSibling?
+                if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                     coincident_corefs = coincident_corefs + 1
                     c_c.append(m.parentNode.getAttribute("ID"))
+
     return [coincident_corefs,c_c]
 
 # print clusters with more than one element
