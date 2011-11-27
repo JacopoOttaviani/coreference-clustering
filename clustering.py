@@ -1,87 +1,96 @@
 import xml.dom.minidom
 import xml.dom
 from operator import itemgetter
-import tuning
-
 from decimal import *
 
+import time
+
+#######################
+# Main data structures
+#######################
 markables = [] 
 markables_dict = {}
 clusters = {} 
-
 coreferences = []
 
-
-# TOY coreferences
-# coreferences = [["9","4"],["10","1"]]
-
-
 getcontext().prec = 7
+distance_iterations = 0
+
+upper_limit = 15
+
+folder = 'data/'
+filename = 'oscar.xml'
+output_folder = "/home/jacopo/Desktop/"
 
 threshold = 9999
 
 
-
-xmldoc = xml.dom.minidom.parse('data/oscar.xml') 
+xmldoc = xml.dom.minidom.parse(folder+filename) 
 
 
 def main():
     
-    initAndMarkAll()
+    # time checking
+    # t0 = time.strftime('%S')
     
-    """
-    m_x = buildVectorFromMarkable(markableFromId("17"))
-    m_y = buildVectorFromMarkable(markableFromId("14"))
-    """
+    # initialize the algorithm's data structures
+    initAndMarkAll()
     
     for m in markables:
         markables_dict[m] =  buildVectorFromMarkable(m)
     
-    # clean empty markables
+    # clean empty markables from data structures
     for m_dict in markables_dict.keys():
         if markables_dict[m_dict] == {}: 
-            #print 'ooooooooooo'
             markables_dict.pop(m_dict)
             markables.remove(m_dict)
+            clusters.pop(m_dict)
     
+    testWhyNot = ["12","9"]
+    
+    scanMarkables(testWhyNot)
     
     print 'Markables dictionary: ',markables_dict
-    
     print 'Markables number: ',len(markables_dict.keys())   
-    
     print 'Clusters sets dictionary: ', clusters
+    print 'Number of keys in Clusters: ', len(clusters.keys())
     
-    """
-    Testing on single markables
-    print m_x
-    print m_y
+    print '\n DISTANCE ITERATIONS:', distance_iterations
+    print '\nPREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
+    print '\nPREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
+    print '\nNEW FOUND COREFERENCES_US: ', len(coreferences)
+    print '\nNUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
+    #print '\nCLUSTERS: \n', printInterestingClusters()
+    print '\nNUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOClusters())
     
-    print 'lemmasMatch',lemmasMatch(m_x, m_y)
-    print 'headMatch',headMatch(m_x, m_y)
-    print 'pos_distance', posDistance(m_x,m_y)
-    print 'NPs subsuming', npSubsuming(m_x,m_y)
-    print 'Number match', numberMatch(m_x,m_y)
-    print 'Animacy match',animacyMatch(m_x,m_y)
+    #print '\nCHAINS FOUND BEFORE: \n',chains('COREF')
     
-    final_distance = distance(m_x,m_y)
-    print 'Final distance:', final_distance
-    """
-
+    print markableWordsFromId("12")
+    print markableWordsFromId("9")
     
-    scanMarkables()
-    
-    print '\n == FOUND COREFERENCES == ',coreferences
     
     fillOutputXML()
     
-def scanMarkables():
+    # print '\nCHAINS FOUND BY US: ',chains('COREF_US')
+    coinc = countSameCorefs()
+    print '\nNUMBER OF COINCIDENT COREF: ', coinc[0]
+    print '\nCOINCIDENT COREF IDs:',coinc[1]
+    
+    #t1= time.strftime('%S')
+    #timediff = int(t0)-int(t1)
+    #print t0, t1
+    # change time
+    #print '\nTIME ELAPSED:', timediff,' seconds.'
+    
+def scanMarkables(testWhyNot):
     
     inv_markables = sorted(markables, reverse=True)
-    print inv_markables
+    
+    debug_single_coref = False 
     
     # possible referent
     for np_i in inv_markables:
-        print '\nconsidering np_i:', markables_dict[np_i]["id"]
+        print 'considering np_i:', markables_dict[np_i]["id"]
         
         # adding here all the possible antecedents to np_i and their distance,
         # in order to collect the compatible one with minimum distance to np_i
@@ -89,33 +98,45 @@ def scanMarkables():
         
         # possible antecedents (except referent itself)
         for np_j in inv_markables[inv_markables.index(np_i)+1:]:
-            dis = distance(markables_dict[np_i], markables_dict[np_j])
-            print '*** distance(id',markables_dict[np_i]["id"],', id',markables_dict[np_j]["id"],') = ',dis
+            
+            
+            # useful to debug single coreferences buggy instances
+            if np_j == markableFromId("9") and np_i == markableFromId("12"):
+                debug_single_coref = True
+                print '\n################### DEBUG SESSION STARTS ###################\n'
+            else: debug_single_coref = False
+            
+            dis = distance(markables_dict[np_i], markables_dict[np_j],debug_single_coref)
+            if (debug_single_coref): print '*** distance(id',markables_dict[np_i]["id"],', id',markables_dict[np_j]["id"],') = ',dis
+            
+
             
             # if distance between two considered markables is minor than threshold (r)
             if dis < threshold:
-                print '*** found distance (',dis,') under threshold (set to:',threshold,')'
+                if (debug_single_coref): print '*** found distance (',dis,') under threshold (set to:',threshold,')'
                 # CHECK COMPATIBILITY
-                if allNpsCompatible(clusters[np_i],clusters[np_j]) == True:
+                if allNpsCompatible(clusters[np_i],clusters[np_j],debug_single_coref) == True:
                     
-                    print '*** found compatibility amongst 2 clusters, adding them in a list (later will compute best minimum)...'
+                    if (debug_single_coref):print '*** found compatibility amongst 2 clusters, adding them in a list (later will compute best minimum)...'
                     
                     # list of possible antecedents of np_i with their distances
                     # antecedent, dis
                     possible_ants.append((np_j, dis))
-                    print '*** unordered possible ants', possible_ants
+                    if (debug_single_coref):print '*** unordered possible ants', possible_ants
                 
-                else: print 'they\'re not compatible, stepping to the next one'
-        
+                #else: print 'they\'re not compatible, stepping to the next one'
+            
+            if (debug_single_coref): print '\n################### DEBUG SESSION ENDS ###################\n'
+
         # if at least one possible antecedents seems to exist
         if (possible_ants != []):   
-            print '*********** SEARCHING FOR MINIMUM:'
+            if (debug_single_coref):print '*********** SEARCHING FOR MINIMUM:'
             # selecting the minimum distance from possible_ants of np_i
             possible_ants = sorted(possible_ants,key=itemgetter(1),reverse=False)
-            print '*** ordered possible ants', possible_ants
+            if (debug_single_coref):print '*** ordered possible ants', possible_ants
             
             # when found the minimum:
-            print '*** minimum d for np_i: ',possible_ants[0][0], possible_ants[0][1]
+            if (debug_single_coref): print '*** minimum d for np_i: ',possible_ants[0][0], possible_ants[0][1]
             
             min_d_compatible_np_j = possible_ants[0][0]
             
@@ -123,17 +144,16 @@ def scanMarkables():
             # i.e. UNION(clusters(np_i), clusters(min_d_compatible_np_j))
             clusters[np_i] = clusters[np_i].union(clusters[min_d_compatible_np_j])
             clusters[min_d_compatible_np_j] = clusters[np_i]
-            print 'clusters np_i (unified):'
-            print clusters[np_i]
-            print 'clusters min_d_np_j (unified):'
-            print clusters[min_d_compatible_np_j]
+            if (debug_single_coref):print 'clusters np_i (unified):'
+            if (debug_single_coref):print clusters[np_i]
+            if (debug_single_coref):print 'clusters min_d_np_j (unified):'
+            if (debug_single_coref):print clusters[min_d_compatible_np_j]
     
             # saving our coref in order to provide COREF_USL children
             # the coreferences list is in the form:
             # [[referent_markable_id, antecedent_markable_id (aka src)], distance... ]
             coreferences.append([markables_dict[np_i]["id"],markables_dict[min_d_compatible_np_j]["id"],possible_ants[0][1]])
-
-
+        
     
 # build a dictionary associated to a markable
 # storing all the useful information parsed from XML file
@@ -177,7 +197,7 @@ def buildVectorFromMarkable(m):
 def initAndMarkAll():
     # markables list sorted as found in the XML annotated document
     
-    for m in xmldoc.getElementsByTagName('MARKABLE'):
+    for m in xmldoc.getElementsByTagName('MARKABLE')[:upper_limit]:
         markables.append(m)
     
     """ cluster dictionary structure: 
@@ -191,11 +211,14 @@ def initAndMarkAll():
     
 
 
-def allNpsCompatible (cluster_i, cluster_j):
+def allNpsCompatible (cluster_i, cluster_j, debug):
+    if (debug): print "### ENTRING ALL NPS COMPATIBLE ###"
     for m_x in cluster_i:
         for m_y in cluster_j:
-            if (distance(markables_dict[m_x],markables_dict[m_y]) > threshold):
+            if (distance(markables_dict[m_x],markables_dict[m_y],debug) > threshold):
+                if (debug): print "### FOUND INCOMPATIBILITY: EXITING ALL NPS COMPATIBLE ###"
                 return False
+    if (debug): print "### EXITING ALL NPS COMPATIBLE, CLUSTERS ARE COMPATIBLE ###"
     return True
 
 
@@ -206,7 +229,10 @@ def allNpsCompatible (cluster_i, cluster_j):
 
 # given two markables dictionaries, return distance between them
 # output distance expressed in Decimal object
-def distance(m_x,m_y):
+def distance(m_x,m_y,verbose):
+    
+    global distance_iterations 
+    distance_iterations = distance_iterations + 1
     getcontext().prec = 7
     
     # initialise distance as a Decimal = 0
@@ -223,23 +249,22 @@ def distance(m_x,m_y):
                     'subsuming'         : Decimal(-infinity) ,                    
                     'number'            : Decimal(infinity) ,
                     'animacy'           : Decimal(infinity) }
-                    
-    
-    print 'starting distance:',d
+
+    if (verbose): print 'starting distance:',d
     d = d + weights['words_match'] * lemmasMatch(m_x, m_y)
-    print 'after wordmatch:',d
+    if (verbose): print 'after lemma match:',d
     d = d + weights['head_match'] * headMatch(m_x, m_y)
-    print 'after position:',d
+    if (verbose): print 'after head match:',d
     d = d + weights['position'] * posDistance(m_x, m_y)
-    print 'after subsuming:',d
+    if (verbose): print 'after position:',d
     d = d + weights['subsuming'] * npSubsuming(m_x, m_y)
-    print 'after number:',d
+    if (verbose): print 'after subsuming:',d
     d = d + weights['number'] * numberMatch(m_x, m_y)
-    print 'after sem_class:',d
+    if (verbose): print 'after number match:',d
     d = d + weights['sem_class'] * semClassMatch(m_x, m_y)
-    print 'after animacy:',d
+    if (verbose): print 'after sem_class match:',d
     d = d + weights['animacy'] * animacyMatch(m_x, m_y)
-    
+    if (verbose): print 'after animacy match:',d
     
     return d
 
@@ -247,9 +272,9 @@ def distance(m_x,m_y):
 # returns 0 if numbers (or animacies) are different, 1 otherwise
 def numberMatch(m_x, m_y):
     if m_x["number"] != m_y["number"]:
-        return Decimal(0)
-    else: 
         return Decimal(1)
+    else: 
+        return Decimal(0)
 
 def animacyMatch(m_x, m_y):
     if m_x["animacy"] != m_y["animacy"]:
@@ -428,17 +453,35 @@ def wordsFromMarkable(m):
         words.append(w.firstChild.nodeValue)
     return words
     
+    
+# just count all already found Corefs and Ident Corefs
+# returns: string
+def numberOfIdentExCoref():    
+    ex_corefs = 0
+    
+    for m in xmldoc.getElementsByTagName("COREF"):
+        if m.getAttribute("TYPE_REL") == 'IDENT':
+            ex_corefs = ex_corefs + 1
+    
+    return ex_corefs
 
+def numberOfAllExCoref():
+    ex_corefs = 0
+    
+    for m in xmldoc.getElementsByTagName("COREF"):
+        ex_corefs = ex_corefs + 1
+    
+    return ex_corefs    
     
 # method to write a brand new xml file, enriched with new coreferences
 # new coreferences will be in the form of:
 # <COREF_US COMMENT="This coreference has been generated by an Unsupervised ML Algo" ID="US0" SRC="4"/>
 def fillOutputXML():
-    # output_xml_parsed = xml.dom.minidom.parse('data/coreference_enriched.xml') 
-    output_xml_parsed = xml.dom.minidom.parse('data/oscar.xml') 
+
+    output_xml_parsed = xml.dom.minidom.parse(folder+filename) 
     markable_dad = ''
     
-    f = open ("/home/jacopo/Desktop/us_coref.xml","w+")
+    f = open (output_folder+'us_coref_'+filename,"w+")
     
     for c in coreferences:
 
@@ -454,29 +497,69 @@ def fillOutputXML():
         src_attr.value = c[1]
         coref_el.setAttributeNode(src_attr)
         
+        """
         comment_attr = xml.dom.minidom.Attr("COMMENT")
         comment_attr.value = "This coreference has been generated by an Unsupervised ML Algo"
         coref_el.setAttributeNode(comment_attr)
+        """
         
         id_attr = xml.dom.minidom.Attr("ID")
         id_attr.value = "US"+str(coreferences.index(c))
         coref_el.setAttributeNode(id_attr)
         
         type_attr = xml.dom.minidom.Attr("TYPE_REL")
-        type_attr.value = "IDENTITY"
+        type_attr.value = "IDENT"
         coref_el.setAttributeNode(type_attr)
         
+        # add a distance field
         d_attr = xml.dom.minidom.Attr("DISTANCE")
         d_attr.value = str(c[2])
-        print '...........',c
         coref_el.setAttributeNode(d_attr)
+        
+        # add words of src to found coref_us element
+        words_src_attr = xml.dom.minidom.Attr("SRC_W")
+        words_src_attr.value = str(markableWordsFromId(c[1]))
+        coref_el.setAttributeNode(words_src_attr)
         
         markable_dad.insertBefore(coref_el,markable_dad.firstChild)
         
     f.write( output_xml_parsed.toprettyxml() )
     f.close
 
+# compares the number of new coreferences which are coincident with the old ones, 
+# and retrieve them
+def countSameCorefs():
+    xmldoc_local = xml.dom.minidom.parse(output_folder+'us_coref_'+filename)
+    coincident_corefs = 0
+    c_c = []
+    for m in xmldoc_local.getElementsByTagName("COREF"):
+        if m.getAttribute("TYPE_REL") == 'IDENT':
+            if (m.parentNode.localName == 'COREF_US'): # or previousSibling?
+                if m.getAttribute("SRC") == m.parentNode.getAttribute("SRC"):
+                    coincident_corefs = coincident_corefs + 1
+                    c_c.append(m.parentNode.getAttribute("ID"))
+    return [coincident_corefs,c_c]
+
+# print clusters with more than one element
+def printInterestingClusters():
+    for c in clusters.keys():
+        if len (clusters[c]) > 1:
+            print c, clusters[c]
+            for m in clusters[c]:
+                print '\t',wordsFromMarkable(m)
+
+# return actual clusters
+# I just filter out copies of the same clusters from clusters list
+def actualNumberOClusters():
     
+    actualClusters = []
+    
+    for c in clusters.keys():
+        if clusters[c] not in actualClusters:
+            actualClusters.append(clusters[c])    
+            
+    return actualClusters
+
 # this is the main part of the program
 if __name__ == "__main__":
     main()
