@@ -2,7 +2,6 @@ import xml.dom.minidom
 import xml.dom
 from operator import itemgetter
 from decimal import *
-
 import time
 
 #######################
@@ -56,22 +55,21 @@ def main():
     print 'Number of keys in Clusters: ', len(clusters.keys())
     
     print '\n DISTANCE ITERATIONS:', distance_iterations
-    print '\nPREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
-    print '\nPREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
-    print '\nNEW FOUND COREFERENCES_US: ', len(coreferences)
-    print '\nNUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
-    #print '\nCLUSTERS: \n', printInterestingClusters()
-    print '\nNUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOClusters())
+    print '\n PREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
+    print '\n PREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
+    print '\n NEW FOUND COREFERENCES_US: ', len(coreferences)
+    print '\n NUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
+
+    print '\n NUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOfClusters(1))
+    print '\n NUMBER OF ACTUAL CLUSTERS (len > 1 element): ',len(actualNumberOfClusters(2))
+    print '\n ACTUAL CLUSTER WITH LEN > 2: ', actualNumberOfClusters(3)    
+    print '\n ACTUAL CLUSTER WITH LEN > 3: ', actualNumberOfClusters(4)
     
-    #print '\nCHAINS FOUND BEFORE: \n',chains('COREF')
+    print '\n ACTUAL CLUSTER WITH LEN > 1: ', actualNumberOfClusters(2)
     
-    
-    fillOutputXML()
-    
-    # print '\nCHAINS FOUND BY US: ',chains('COREF_US')
     coinc = countSameCorefs()
-    print '\nNUMBER OF COINCIDENT COREF: ', coinc[0]
-    print '\nCOINCIDENT COREF IDs:',coinc[1]
+    print '\n NUMBER OF COINCIDENT COREF: ', coinc[0]
+    print '\n COINCIDENT COREF IDs:',coinc[1]
     
     #t1= time.strftime('%S')
     #timediff = int(t0)-int(t1)
@@ -197,7 +195,7 @@ def buildVectorFromMarkable(m):
 def initAndMarkAll():
     # markables list sorted as found in the XML annotated document
     
-    for m in xmldoc.getElementsByTagName('MARKABLE')[:upper_limit]:
+    for m in xmldoc.getElementsByTagName('MARKABLE'):#[:upper_limit]:
         markables.append(m)
     
     """ cluster dictionary structure: 
@@ -580,12 +578,12 @@ def printInterestingClusters():
 
 # return actual clusters
 # I just filter out copies of the same clusters from clusters list
-def actualNumberOClusters():
+def actualNumberOfClusters(min_len):
     
     actualClusters = []
     
     for c in clusters.keys():
-        if clusters[c] not in actualClusters:
+        if clusters[c] not in actualClusters and len(clusters[c]) > min_len:
             actualClusters.append(clusters[c])    
             
     return actualClusters
