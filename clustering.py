@@ -557,16 +557,16 @@ def fillOutputXML():
 # compares the number of new coreferences which are coincident with the old ones, 
 # and retrieve them
 def countSameCorefs():
-    #xmldoc_local = xml.dom.minidom.parse('/home/jacopo/Desktop/us_coref_oscar.xml')
+
     xmldoc_local = xml.dom.minidom.parse(output_folder+'us_coref_'+filename)
     coincident_corefs = 0
     c_c = []
     for m in xmldoc_local.getElementsByTagName("COREF"):
         if m.getAttribute("TYPE_REL") == 'IDENT':
-            if (m.parentNode.childNodes[1].tagName == 'COREF_US'): # or previousSibling?
+            if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
                 if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                     coincident_corefs = coincident_corefs + 1
-                    c_c.append(m.parentNode.getAttribute("ID"))
+                    c_c.append(m.parentNode.childNodes[1].getAttribute("ID"))
 
     return [coincident_corefs,c_c]
 
