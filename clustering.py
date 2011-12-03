@@ -19,9 +19,23 @@ upper_limit = 15
 
 folder = 'data/'
 filename = 'oscar.xml'
-output_folder = "/home/jacopo/Desktop/"
+folder = '/home/jacopo/Desktop/test_all_sem/'
+#filename = '357253newsML_EDITED_11-22.xml.xml'
+#filename = '396266newsML_EDITED_11-22 .xml.xml'
+#filename = '397935newsML._EDITED_11-24xmlout.xml'
+#filename = '398158newsML_EDITED_11-24.xmlout.xml'
+#filename = '398266newsML._EDITED_11-24xmlout.xml'
+#filename = '396847newsML_EDITED_11-23.xmlout.xml'
+#filename = '396823newsML_EDITED_11-22.xmlout.xml'
+#filename = '396285newsML_EDITED_11-22.xmlout.xml'
+#filename = '396284newsML_EDITED_11-22.xmlout.xml'
+#filename = '396278newsML_EDITED_.11-22.xmlout.xml'
+#filename = '396266newsML_EDITED_11-22.xmlout.xml'
+filename = '357253newsML_EDITED_11-22.xmlout.xml'
+output_folder = "/home/jacopo/Desktop/output_unsupervised_v2/"
 
-threshold = 9999
+threshold = 6
+threshold_all_np = 9999
 
 
 xmldoc = xml.dom.minidom.parse(folder+filename) 
@@ -45,19 +59,24 @@ def main():
             markables.remove(m_dict)
             clusters.pop(m_dict)
     
-    testWhyNot = ["10","1"]
+    testWhyNot = ["122","21"]
     
     scanMarkables(testWhyNot)
+    details = '/home/jacopo/Desktop/details.txt'
     
     print 'Markables dictionary: ',markables_dict
+    
     print 'Markables number: ',len(markables_dict.keys())   
     print 'Clusters sets dictionary: ', clusters
     print 'Number of keys in Clusters: ', len(clusters.keys())
     
     print '\n DISTANCE ITERATIONS:', distance_iterations
     print '\n PREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
+    details = '\n PREFOUND ALL COREFERENCES: ' + str(numberOfAllExCoref())
     print '\n PREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
+    details = details + '\n PREFOUND IDENT COREFERENCES: ' + str(numberOfIdentExCoref())
     print '\n NEW FOUND COREFERENCES_US: ', len(coreferences)
+    details = details + '\n NEW FOUND COREFERENCES_US: ' + str(len(coreferences))
     print '\n NUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
 
     print '\n NUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOfClusters(1))
@@ -66,10 +85,12 @@ def main():
     print '\n ACTUAL CLUSTER WITH LEN > 3: ', actualNumberOfClusters(4)
     
     print '\n ACTUAL CLUSTER WITH LEN > 1: ', actualNumberOfClusters(2)
-    
+    fillOutputXML()
+    print details
     coinc = countSameCorefs()
     print '\n NUMBER OF COINCIDENT COREF: ', coinc[0]
     print '\n COINCIDENT COREF IDs:',coinc[1]
+    print '\n NUMBER OF COINCIDENT COREF (all included, also not IDENT):',coinc[2]
     
     #t1= time.strftime('%S')
     #timediff = int(t0)-int(t1)
@@ -94,6 +115,15 @@ def scanMarkables(testWhyNot):
         # possible antecedents (except referent itself)
         for np_j in inv_markables[inv_markables.index(np_i)+1:]:
             
+            # TODO: check if it is analysing np_j.firstChild = np_i, in that case: skip.
+            if (np_j.firstChild == np_i):    
+                print 'skip nested markables because they cannot be coreferential ',markables_dict[np_i]["id"], markables_dict[np_j]["id"]
+                continue
+            
+            # FIX: NON SOLO FIRST CHILD
+            if (np_i in np_j.childNodes):
+                print 'nested markables (tra i figli)'
+                continue
             
             # useful to debug single coreferences buggy instances
             if np_j == markableFromId(testWhyNot[1]) and np_i == markableFromId(testWhyNot[0]):
@@ -182,7 +212,7 @@ def buildVectorFromMarkable(m):
     
     np_i_dict["article"] = m.getAttribute("ARTICLE")
     
-    np_i_dict["sem_class"] = m.getAttribute("SEMANTIC_CLASS")
+    np_i_dict["sem_class"] = m.getAttribute("SEM_CLASS")
     
     np_i_dict["proper_name"] = m.getAttribute("PROPER_NAME")
     
@@ -213,7 +243,7 @@ def allNpsCompatible (cluster_i, cluster_j, debug):
     if (debug): print "### ENTRING ALL NPS COMPATIBLE ###"
     for m_x in cluster_i:
         for m_y in cluster_j:
-            if (distance(markables_dict[m_x],markables_dict[m_y],debug) > threshold):
+            if (distance(markables_dict[m_x],markables_dict[m_y],debug) > threshold_all_np):
                 if (debug): print "### FOUND INCOMPATIBILITY: EXITING ALL NPS COMPATIBLE ###"
                 return False
     if (debug): print "### EXITING ALL NPS COMPATIBLE, CLUSTERS ARE COMPATIBLE ###"
@@ -259,11 +289,17 @@ def distance(m_x,m_y,verbose):
     if (verbose): print 'after subsuming:',d
     d = d + weights['number'] * numberMatch(m_x, m_y)
     if (verbose): print 'after number match:',d
-    d = d + weights['sem_class'] * semClassMatch(m_x, m_y)
+    d = d + weights['sem_class'] * semClassMatch(m_x, m_y, verbose)
     if (verbose): print 'after sem_class match:',d
     d = d + weights['animacy'] * animacyMatch(m_x, m_y)
     if (verbose): print 'after animacy match:',d
     
+    """
+    if (m_j.firstChild == m_x):    
+        print 'skip nested markables because they cannot be coreferential ',markables_dict[np_i]["id"], markables_dict[np_j]["id"]
+        d = infinity
+    if (verbose): print 'after match:',d
+    """    
     return d
 
 
@@ -294,7 +330,7 @@ def wordSubString(m_x, m_y):
 # TO-DO: Let's think to a better way to get subsuming (e.g., intersection?)
 def npSubsuming(m_x, m_y):
     
-    if set(m_x["words"]) <= set(m_y["words"]) or set(m_x["words"]) >= set(m_y["words"]):
+    if set(m_x["words"]) <= set(m_y["words"]):
         return Decimal(1)
     
     else: 
@@ -304,7 +340,8 @@ def npSubsuming(m_x, m_y):
 # returns diff positions / max_distance (last word_id)
 def posDistance(m_x,m_y):
     
-    if m_x["pos"] > m_y["pos"]:
+    # COSA?
+    if int(m_x["pos"][1:]) > int(m_y["pos"][1:]):
         diff_pos = int(m_x["pos"][1:]) - int(m_y["pos"][1:])
     else:
         diff_pos = int(m_y["pos"][1:]) - int(m_x["pos"][1:])
@@ -323,16 +360,34 @@ def maxDistance():
 # returns 1 if heads match, 0 otherwise
 def headMatch(m_x,m_y):
     if (m_x["head_word"] == m_y["head_word"]):
-        return Decimal(1)
-    else:
         return Decimal(0)
+    else:
+        return Decimal(1)
 
 # input = two markables dictionaries
 # returns 1 if they have a common semantics class, 0 otherwise
-def semClassMatch(m_x,m_y):
+def semClassMatch(m_x,m_y,verbose):
+    """
+    if m_x["sem_class"] == m_y["sem_class"]:
+        return 0
+    else:
+        return 1
+    """
+    if (verbose):
+        print 'SEMANTIC CLASSES'
+        print m_x["sem_class"]
+        print m_y["sem_class"]
+    
+    if (m_x["sem_class"] == m_y["sem_class"]):
+        return 0
     
     sem_class_x = listFromSemClassStr(m_x["sem_class"])
     sem_class_y = listFromSemClassStr(m_y["sem_class"])
+    
+    if (verbose):
+        print 'SEMANTIC CLASSES CRUNCHED'
+        print sem_class_x
+        print sem_class_y
     
     for s_c in sem_class_x:
         if s_c in sem_class_y:
@@ -340,11 +395,12 @@ def semClassMatch(m_x,m_y):
         
     for s_c in sem_class_y:
         if s_c in sem_class_x:
-            return 0
+            return 0 
     
     # else, intersection is empty
     return 1
-
+    
+    
 def listFromSemClassStr(s):
     # string ['relation', 'substance', 'artifact', 'food'] --> list 
     s = s[1:len(s)-1]
@@ -558,15 +614,30 @@ def countSameCorefs():
 
     xmldoc_local = xml.dom.minidom.parse(output_folder+'us_coref_'+filename)
     coincident_corefs = 0
+    coincident_all_corefs = 0
     c_c = []
     for m in xmldoc_local.getElementsByTagName("COREF"):
+        if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
+            if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
+                coincident_all_corefs = coincident_all_corefs + 1
+        if m.getAttribute("TYPE_REL") == 'IDENT':
+            if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
+                if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
+                    coincident_corefs = coincident_corefs + 1
+                    c_c.append(m.parentNode.childNodes[1].getAttribute("ID"))
+    
+    # Counting also uncertain coreferences
+    for m in xmldoc_local.getElementsByTagName("UCOREF"):
+        if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
+            if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
+                coincident_all_corefs = coincident_all_corefs + 1
         if m.getAttribute("TYPE_REL") == 'IDENT':
             if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
                 if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                     coincident_corefs = coincident_corefs + 1
                     c_c.append(m.parentNode.childNodes[1].getAttribute("ID"))
 
-    return [coincident_corefs,c_c]
+    return [coincident_corefs,c_c,coincident_all_corefs]
 
 # print clusters with more than one element
 def printInterestingClusters():
