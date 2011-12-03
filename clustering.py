@@ -3,10 +3,11 @@ import xml.dom
 from operator import itemgetter
 from decimal import *
 import time
+import os
 
-#######################
-# Main data structures
-#######################
+###############################
+# Main global data structures
+###############################
 markables = [] 
 markables_dict = {}
 clusters = {} 
@@ -17,96 +18,112 @@ distance_iterations = 0
 
 upper_limit = 15
 
-folder = 'data/'
-filename = 'oscar.xml'
-folder = '/home/jacopo/Desktop/test_all_sem/'
-#filename = '357253newsML_EDITED_11-22.xml.xml'
-#filename = '396266newsML_EDITED_11-22 .xml.xml'
-#filename = '397935newsML._EDITED_11-24xmlout.xml'
-#filename = '398158newsML_EDITED_11-24.xmlout.xml'
-#filename = '398266newsML._EDITED_11-24xmlout.xml'
-#filename = '396847newsML_EDITED_11-23.xmlout.xml'
-#filename = '396823newsML_EDITED_11-22.xmlout.xml'
-#filename = '396285newsML_EDITED_11-22.xmlout.xml'
-#filename = '396284newsML_EDITED_11-22.xmlout.xml'
-#filename = '396278newsML_EDITED_.11-22.xmlout.xml'
-#filename = '396266newsML_EDITED_11-22.xmlout.xml'
-filename = '357253newsML_EDITED_11-22.xmlout.xml'
-output_folder = "/home/jacopo/Desktop/output_unsupervised_v2/"
+xmldoc = ''                                                     # xmldoc parser (defined below in main for cycle)
 
+folder = '/home/jacopo/Desktop/test_all_sem/'                   # input folder
+filename = ''                                                   # filename (defined below in for cycle)
+output_folder = "/home/jacopo/Desktop/output_unsupervised/"     # output folder
+details_folder = '/home/jacopo/Desktop/details_unsupervised/'   # details output folder
 threshold = 6
 threshold_all_np = 9999
 
 
-xmldoc = xml.dom.minidom.parse(folder+filename) 
-
-
 def main():
     
-    # time checking
-    # t0 = time.strftime('%S')
+    global folder
+    global filename 
+    global markables 
+    global markables_dict
+    global clusters 
+    global coreferences
+    global xmldoc
     
-    # initialize the algorithm's data structures
-    initAndMarkAll()
+    # main for cycle
+    for fil in os.listdir(folder):
+        xmldoc = xml.dom.minidom.parse(folder+fil) 
+        markables = [] 
+        markables_dict = {}
+        clusters = {} 
+        coreferences = []
+        
+        print '***************************************'
+        print 'clustering file: ',folder+fil
+        print '***************************************'
+        filename = fil
     
-    for m in markables:
-        markables_dict[m] =  buildVectorFromMarkable(m)
-    
-    # clean empty markables from data structures
-    for m_dict in markables_dict.keys():
-        if markables_dict[m_dict] == {}: 
-            markables_dict.pop(m_dict)
-            markables.remove(m_dict)
-            clusters.pop(m_dict)
-    
-    testWhyNot = ["122","21"]
-    
-    scanMarkables(testWhyNot)
-    details = '/home/jacopo/Desktop/details.txt'
-    
-    print 'Markables dictionary: ',markables_dict
-    
-    print 'Markables number: ',len(markables_dict.keys())   
-    print 'Clusters sets dictionary: ', clusters
-    print 'Number of keys in Clusters: ', len(clusters.keys())
-    
-    print '\n DISTANCE ITERATIONS:', distance_iterations
-    print '\n PREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
-    details = '\n PREFOUND ALL COREFERENCES: ' + str(numberOfAllExCoref())
-    print '\n PREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
-    details = details + '\n PREFOUND IDENT COREFERENCES: ' + str(numberOfIdentExCoref())
-    print '\n NEW FOUND COREFERENCES_US: ', len(coreferences)
-    details = details + '\n NEW FOUND COREFERENCES_US: ' + str(len(coreferences))
-    print '\n NUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
+        details_fn = details_folder+filename+'.details.txt'
+        details = ''
+        
+        # time checking
+        # t0 = time.strftime('%S')
+        
+        # initialize the algorithm's data structures
+        initAndMarkAll()
+        
+        for m in markables:
+            markables_dict[m] =  buildVectorFromMarkable(m)
+        
+        # clean empty markables from data structures
+        for m_dict in markables_dict.keys():
+            if markables_dict[m_dict] == {}: 
+                markables_dict.pop(m_dict)
+                markables.remove(m_dict)
+                clusters.pop(m_dict)
+        
+        # use this to debug single instances
+        testWhyNot = ["163","161"]
+        
+        scanMarkables(testWhyNot)
 
-    print '\n NUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOfClusters(1))
-    print '\n NUMBER OF ACTUAL CLUSTERS (len > 1 element): ',len(actualNumberOfClusters(2))
-    print '\n ACTUAL CLUSTER WITH LEN > 2: ', actualNumberOfClusters(3)    
-    print '\n ACTUAL CLUSTER WITH LEN > 3: ', actualNumberOfClusters(4)
-    
-    print '\n ACTUAL CLUSTER WITH LEN > 1: ', actualNumberOfClusters(2)
-    fillOutputXML()
-    print details
-    coinc = countSameCorefs()
-    print '\n NUMBER OF COINCIDENT COREF: ', coinc[0]
-    print '\n COINCIDENT COREF IDs:',coinc[1]
-    print '\n NUMBER OF COINCIDENT COREF (all included, also not IDENT):',coinc[2]
-    
-    #t1= time.strftime('%S')
-    #timediff = int(t0)-int(t1)
-    #print t0, t1
-    # change time
-    #print '\nTIME ELAPSED:', timediff,' seconds.'
+        print 'Markables dictionary: ',markables_dict
+        
+        print 'Markables number: ',len(markables_dict.keys())   
+        print 'Clusters sets dictionary: ', clusters
+        print 'Number of keys in Clusters: ', len(clusters.keys())
+        
+        print '\n DISTANCE ITERATIONS:', distance_iterations
+        print '\n PREFOUND ALL COREFERENCES: ', numberOfAllExCoref()
+        details = '\n PREFOUND ALL COREFERENCES: ' + str(numberOfAllExCoref())
+        print '\n PREFOUND IDENT COREFERENCES: ', numberOfIdentExCoref()
+        details = details + '\n PREFOUND IDENT COREFERENCES: ' + str(numberOfIdentExCoref())
+        print '\n NEW FOUND COREFERENCES_US: ', len(coreferences)
+        details = details + '\n NEW FOUND COREFERENCES_US: ' + str(len(coreferences))
+        print '\n NUMBER OF CLUSTERS FOUND (also with 1 element): ',len(clusters)
+
+        print '\n NUMBER OF ACTUAL CLUSTERS (also with 1 element): ',len(actualNumberOfClusters(1))
+        print '\n NUMBER OF ACTUAL CLUSTERS (len > 1 element): ',len(actualNumberOfClusters(2))
+        print '\n ACTUAL CLUSTER WITH LEN > 2: ', actualNumberOfClusters(3)    
+        print '\n ACTUAL CLUSTER WITH LEN > 3: ', actualNumberOfClusters(4)
+        
+        print '\n ACTUAL CLUSTER WITH LEN > 1: ', actualNumberOfClusters(2)
+        fillOutputXML()
+        print details
+        coinc = countSameCorefs()
+        print '\n NUMBER OF COINCIDENT COREF: ', coinc[0]
+        details = details + '\n NUMBER OF COINCIDENT COREF: '+ str(coinc[0])
+        print '\n COINCIDENT COREF IDs:',coinc[1]
+        details = details + '\n COINCIDENT COREF IDs:'+ str(coinc[1])
+        details = details + '\n NUMBER OF COINCIDENT COREF (all included, also not IDENT):'+ str(coinc[2])
+        print '\n NUMBER OF COINCIDENT COREF (all included, also not IDENT):',coinc[2]
+        
+        # writing details
+        f = open (details_fn,"w+")
+        f.write(details)
+        f.close()
+
     
 def scanMarkables(testWhyNot):
-    
+    global coreferences 
+    global markables
+    global markables_dict
+    global clusters 
     inv_markables = sorted(markables, reverse=True)
     
     debug_single_coref = False 
     
     # possible referent
     for np_i in inv_markables:
-        print 'considering np_i:', markables_dict[np_i]["id"]
+        #print 'considering np_i:', markables_dict[np_i]["id"]
         
         # adding here all the possible antecedents to np_i and their distance,
         # in order to collect the compatible one with minimum distance to np_i
@@ -117,12 +134,12 @@ def scanMarkables(testWhyNot):
             
             # TODO: check if it is analysing np_j.firstChild = np_i, in that case: skip.
             if (np_j.firstChild == np_i):    
-                print 'skip nested markables because they cannot be coreferential ',markables_dict[np_i]["id"], markables_dict[np_j]["id"]
+                #print 'skip nested markables because they cannot be coreferential ',markables_dict[np_i]["id"], markables_dict[np_j]["id"]
                 continue
             
-            # FIX: NON SOLO FIRST CHILD
+            # if np_i is among the children of np_j => they're nested markables
             if (np_i in np_j.childNodes):
-                print 'nested markables (tra i figli)'
+                #print 'nested markables (tra i figli)'
                 continue
             
             # useful to debug single coreferences buggy instances
@@ -224,6 +241,8 @@ def buildVectorFromMarkable(m):
 # create a cluster for each markable found in XML and save it in a clusters dictionary
 def initAndMarkAll():
     # markables list sorted as found in the XML annotated document
+    
+    global xmldoc
     
     for m in xmldoc.getElementsByTagName('MARKABLE'):#[:upper_limit]:
         markables.append(m)
@@ -477,6 +496,9 @@ def wMatch(m_x,m_y):
 # XML support functions 
 #########################
 def markableWordsFromId(id):
+    
+    global xmldoc
+    
     words = []
     for m in xmldoc.getElementsByTagName("MARKABLE"):
         if m.getAttribute("ID") == id:
@@ -485,6 +507,7 @@ def markableWordsFromId(id):
     return words
 
 def markableWordsIdsFromId(id):
+    global xmldoc
     words = []
     for m in xmldoc.getElementsByTagName("MARKABLE"):
         if m.getAttribute("ID") == id:
@@ -493,6 +516,7 @@ def markableWordsIdsFromId(id):
     return words
 
 def markableLemmasFromId(id):
+    global xmldoc
     lemmas = []
     for m in xmldoc.getElementsByTagName("MARKABLE"):
         if m.getAttribute("ID") == id:
@@ -501,6 +525,7 @@ def markableLemmasFromId(id):
     return lemmas
 
 def markableFromId(id):
+    global xmldoc
     for m in xmldoc.getElementsByTagName("MARKABLE"):
         if m.getAttribute("ID") == id:
             return m
@@ -518,6 +543,7 @@ def wordFromId(id):
     return ''
 
 def lemmaFromId(id):
+    global xmldoc
     # just check if the input wordID starts with W, if not: add W at beginning
     if id[0] != 'W':
         id = "W"+id
@@ -540,7 +566,7 @@ def wordsFromMarkable(m):
 # returns: string
 def numberOfIdentExCoref():    
     ex_corefs = 0
-    
+    global xmldoc
     for m in xmldoc.getElementsByTagName("COREF"):
         if m.getAttribute("TYPE_REL") == 'IDENT':
             ex_corefs = ex_corefs + 1
@@ -549,7 +575,7 @@ def numberOfIdentExCoref():
 
 def numberOfAllExCoref():
     ex_corefs = 0
-    
+    global xmldoc
     for m in xmldoc.getElementsByTagName("COREF"):
         ex_corefs = ex_corefs + 1
     
@@ -560,9 +586,13 @@ def numberOfAllExCoref():
 # <COREF_US COMMENT="This coreference has been generated by an Unsupervised ML Algo" ID="US0" SRC="4"/>
 def fillOutputXML():
 
+    global folder
+    global filename
+    global coreferences 
+    
     output_xml_parsed = xml.dom.minidom.parse(folder+filename) 
     markable_dad = ''
-    
+
     f = open (output_folder+'us_coref_'+filename,"w+")
     
     for c in coreferences:
@@ -611,15 +641,25 @@ def fillOutputXML():
 # compares the number of new coreferences which are coincident with the old ones, 
 # and retrieve them
 def countSameCorefs():
-
+    
+    global filename
+    global output_folder
+    
     xmldoc_local = xml.dom.minidom.parse(output_folder+'us_coref_'+filename)
     coincident_corefs = 0
     coincident_all_corefs = 0
     c_c = []
+    
+    avgDistanceAcc = 0
+    avgNumb = 0
     for m in xmldoc_local.getElementsByTagName("COREF"):
         if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
             if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                 coincident_all_corefs = coincident_all_corefs + 1
+                if (float(m.parentNode.childNodes[1].getAttribute("DISTANCE")) > -999):
+                    print 'distanza utile rilevata: ',float(m.parentNode.childNodes[1].getAttribute("DISTANCE"))
+                    avgNumb = avgNumb + 1
+                    avgDistanceAcc = avgDistanceAcc + float(m.parentNode.childNodes[1].getAttribute("DISTANCE"))
         if m.getAttribute("TYPE_REL") == 'IDENT':
             if (m.parentNode.childNodes[1].tagName == 'COREF_US'): 
                 if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
@@ -636,11 +676,13 @@ def countSameCorefs():
                 if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                     coincident_corefs = coincident_corefs + 1
                     c_c.append(m.parentNode.childNodes[1].getAttribute("ID"))
-
+    #avg = avgDistanceAcc / avgNumb
+    #print '******************************* media', avg
     return [coincident_corefs,c_c,coincident_all_corefs]
 
 # print clusters with more than one element
 def printInterestingClusters():
+    global clusters 
     for c in clusters.keys():
         if len (clusters[c]) > 1:
             print c, clusters[c]
@@ -650,7 +692,7 @@ def printInterestingClusters():
 # return actual clusters
 # I just filter out copies of the same clusters from clusters list
 def actualNumberOfClusters(min_len):
-    
+    global clusters 
     actualClusters = []
     
     for c in clusters.keys():
