@@ -12,18 +12,16 @@ markables = []
 markables_dict = {}
 clusters = {} 
 coreferences = []
-
 getcontext().prec = 7
 distance_iterations = 0
 
 upper_limit = 15
 
-xmldoc = ''                                                     # xmldoc parser (defined below in main for cycle)
-
-folder = '/home/jacopo/Desktop/test_all_sem/'                   # input folder
-filename = ''                                                   # filename (defined below in for cycle)
-output_folder = "/home/jacopo/Desktop/output_unsupervised/"     # output folder
-details_folder = '/home/jacopo/Desktop/details_unsupervised/'   # details output folder
+xmldoc = ''                                          
+folder = '/home/jacopo/Desktop/temp/'                # input folder
+filename = ''                                        # filename (defined below in for cycle)
+output_folder = "/home/jacopo/Desktop/output_us/"    # output folder
+details_folder = '/home/jacopo/Desktop/details_us/'  # details output folder
 threshold = 6
 threshold_all_np = 9999
 
@@ -40,7 +38,12 @@ def main():
     
     # main for cycle
     for fil in os.listdir(folder):
-        xmldoc = xml.dom.minidom.parse(folder+fil) 
+        try:
+            xmldoc = xml.dom.minidom.parse(folder+fil) 
+        except:
+            print '* error with: ', fil
+            continue
+        
         markables = [] 
         markables_dict = {}
         clusters = {} 
@@ -72,6 +75,7 @@ def main():
         
         # use this to debug single instances
         testWhyNot = ["163","161"]
+        
         
         scanMarkables(testWhyNot)
 
@@ -117,13 +121,19 @@ def scanMarkables(testWhyNot):
     global markables
     global markables_dict
     global clusters 
-    inv_markables = sorted(markables, reverse=True)
+    
+    inv_markables = []
     
     debug_single_coref = False 
     
+    print markables
+    # black magic
+    inv_markables = markables[::-1]
+    print inv_markables
+    
     # possible referent
     for np_i in inv_markables:
-        #print 'considering np_i:', markables_dict[np_i]["id"]
+        print 'considering np_i:', markables_dict[np_i]["id"]
         
         # adding here all the possible antecedents to np_i and their distance,
         # in order to collect the compatible one with minimum distance to np_i
@@ -131,15 +141,9 @@ def scanMarkables(testWhyNot):
         
         # possible antecedents (except referent itself)
         for np_j in inv_markables[inv_markables.index(np_i)+1:]:
-            
-            # TODO: check if it is analysing np_j.firstChild = np_i, in that case: skip.
-            if (np_j.firstChild == np_i):    
-                #print 'skip nested markables because they cannot be coreferential ',markables_dict[np_i]["id"], markables_dict[np_j]["id"]
-                continue
-            
-            # if np_i is among the children of np_j => they're nested markables
-            if (np_i in np_j.childNodes):
-                #print 'nested markables (tra i figli)'
+
+            if (granPa(markables_dict[np_i]["id"],markables_dict[np_j]["id"])):
+                print 'Nested NPs!', markables_dict[np_j]["id"], markables_dict[np_i]["id"]
                 continue
             
             # useful to debug single coreferences buggy instances
@@ -154,7 +158,6 @@ def scanMarkables(testWhyNot):
             dis = distance(markables_dict[np_i], markables_dict[np_j],debug_single_coref)
             if (debug_single_coref): print '*** distance(id',markables_dict[np_i]["id"],', id',markables_dict[np_j]["id"],') = ',dis
             
-
             
             # if distance between two considered markables is minor than threshold (r)
             if dis < threshold:
@@ -199,6 +202,17 @@ def scanMarkables(testWhyNot):
             # [[referent_markable_id, antecedent_markable_id (aka src)], distance... ]
             coreferences.append([markables_dict[np_i]["id"],markables_dict[min_d_compatible_np_j]["id"],possible_ants[0][1]])
         
+# This method answers to: is np_j granPa of np_i?
+# with np_j and np_i IDs of two markables
+def granPa(np_i, np_j):
+    
+    subtree = markableFromId(np_j).getElementsByTagName("MARKABLE")
+
+    for i in subtree:
+        if i.getAttribute("ID") == np_i:
+            return True
+    
+    return False
     
 # build a dictionary associated to a markable
 # storing all the useful information parsed from XML file
@@ -243,6 +257,12 @@ def initAndMarkAll():
     # markables list sorted as found in the XML annotated document
     
     global xmldoc
+    global markables
+    global clusters
+    
+    markables = []
+    clusters = {}
+    
     
     for m in xmldoc.getElementsByTagName('MARKABLE'):#[:upper_limit]:
         markables.append(m)
@@ -657,7 +677,6 @@ def countSameCorefs():
             if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                 coincident_all_corefs = coincident_all_corefs + 1
                 if (float(m.parentNode.childNodes[1].getAttribute("DISTANCE")) > -999):
-                    print 'distanza utile rilevata: ',float(m.parentNode.childNodes[1].getAttribute("DISTANCE"))
                     avgNumb = avgNumb + 1
                     avgDistanceAcc = avgDistanceAcc + float(m.parentNode.childNodes[1].getAttribute("DISTANCE"))
         if m.getAttribute("TYPE_REL") == 'IDENT':
@@ -676,8 +695,7 @@ def countSameCorefs():
                 if m.getAttribute("SRC") == m.parentNode.childNodes[1].getAttribute("SRC"):
                     coincident_corefs = coincident_corefs + 1
                     c_c.append(m.parentNode.childNodes[1].getAttribute("ID"))
-    #avg = avgDistanceAcc / avgNumb
-    #print '******************************* media', avg
+
     return [coincident_corefs,c_c,coincident_all_corefs]
 
 # print clusters with more than one element
