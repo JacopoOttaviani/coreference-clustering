@@ -18,10 +18,10 @@ distance_iterations = 0
 upper_limit = 15
 
 xmldoc = ''                                          
-folder = '/home/jacopo/Desktop/temp/'                # input folder
+folder = '/home/x/Desktop/temp/'                # input folder
 filename = ''                                        # filename (defined below in for cycle)
-output_folder = "/home/jacopo/Desktop/output_us/"    # output folder
-details_folder = '/home/jacopo/Desktop/details_us/'  # details output folder
+output_folder = "/home/x/Desktop/output_us/"    # output folder
+details_folder = '/home/x/Desktop/details_us/'  # details output folder
 threshold = 6
 threshold_all_np = 9999
 
